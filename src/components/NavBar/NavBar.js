@@ -1,9 +1,11 @@
 import {Link,Outlet} from 'react-router-dom'
 import './NavBar.css';
 import logo from "./logo.jpeg";
-import search_icon from "./search.png";
+import search_icon from "../SVGData/search.png";
+import menu_icon from "../SVGData/menu.png";
+import close_icon from "../SVGData/close.png";
 import {useState, useEffect } from 'react'
-import SVGData from '../SVGData/SVGData.js'
+//import SVGData from '../SVGData/SVGData.js'
 
 
 
@@ -153,9 +155,10 @@ export default function NavBar(){
                                       <div className='link--search'>
                                          
                                          {drop? 
-                                            <div onClick={dropMenu}> {SVGData[0].code} </div>
+                                            <img onClick={dropMenu} style={{width:'30px'}} src={menu_icon} alt='menu--icon'/>
                                               :
-                                            <div  onClick={closeMenu}>{SVGData[1].code}</div>} 
+                                            <img  onClick={closeMenu} style={{width:'30px'}}src={close_icon} alt='close--icon'/>
+                                         } 
                                          
                                          
                                       </div>
