@@ -3,6 +3,9 @@ import './NavBar.css';
 import logo from "./logo.jpeg";
 import search_icon from "./search.png";
 import {useState, useEffect } from 'react'
+import SVGData from '../SVGData/SVGData.js'
+
+
 
 export default function NavBar(){
    
@@ -117,29 +120,55 @@ export default function NavBar(){
            )
        }
 
-       function NavBarShrink (props){
-        return (
-                  <div id='nav--bar--shrink' style={props.style1}>
-                          <div className='nav--bar--container--shrink'>
-                               <div style={{display:'flex', justifyContent:'space-between', width:'100%'}}>
-                                  <img className='logo' src={logo} alt='logo heres' />
-                                  <img id ='link' className='search--icon' src={search_icon} alt='search' />
-                               </div>
-                                  
-  
-                                  <div className='link--search'>
-                                      <div className='links'>
-                                            {link_array}
-                                              
-                                          </div>
-                                  </div>
-                          </div>
-                          <div className='tab' style={props.style2}>
+     
+
+         function NavBarShrink (props){
+              
+               const[drop,setDrop]=useState(true)
+
+               function dropMenu(){
+                setDrop(false)
+               }
+               function closeMenu(){
+                setDrop(true)
+               }
+
+            function LinkArray(props){
+                return (
+                <div className='link--search' style={props.style3}>
+                            <div className='links'>
+                                {link_array}
+                            </div>
+               </div>)
+            }
+            return (
+                      <div id='nav--bar--shrink' style={props.style1}>
+                              <div className='nav--bar--container--shrink'>
+                                   <div style={{display:'flex', justifyContent:'space-between', width:'100%'}}>
+                                      <img className='logo' src={logo} alt='logo heres' />
+                                      <img id ='link' className='search--icon' src={search_icon} alt='search' />
+                                   </div>
+                                      
+      
+                                      <div className='link--search'>
+                                         
+                                         {drop? 
+                                            <div onClick={dropMenu}> {SVGData[0].code} </div>
+                                              :
+                                            <div  onClick={closeMenu}>{SVGData[1].code}</div>} 
+                                         
+                                         
+                                      </div>
+                                      
+                                        <LinkArray style3={{display:(!drop? 'block': 'none')}} />   
                               
+                              <div className='tab' style={props.style2}>
+                                  
+                              </div>
                           </div>
-                      </div>
-             )
-         }
+                    </div>
+                 )
+             }
 
 
         
@@ -153,7 +182,7 @@ export default function NavBar(){
             
             { scroller >=0 && width >800 && <NavBarSpread/> }
             { scroller>150 &&  width >800 && <NavBarSpread  style1={{ position:'fixed', top:'0px'}} style2={{display:'none'}}/> }
-            { scroller >=0 && width <800 && <NavBarShrink />}
+            { scroller >=0 && width <800 &&  <NavBarShrink />}
             { scroller>150 &&  width <800 && <NavBarShrink  style1={{ position:'fixed', top: '0px'}} style2={{display:'none'}}/> }
             
             
@@ -161,3 +190,5 @@ export default function NavBar(){
         
     )
 }
+
+ 

@@ -103,16 +103,11 @@ export default function Receipt({data}){
                                         </div>
                                         
                                         <div className='part--A--right' style={{ backgroundColor:'' , width:'48%'}}>
-                                               <div className='airwaybill-code' style={{ backgroundColor:'#fff', width:'100%', height:'20%'}}>
+                                               <div className='airwaybill-code' style={{ backgroundColor:'#fff', width:'100%', height:'10%'}}>
                                                      <div>
                                                           Air Waybill Number
                                                     </div>
                                                     <br />
-                                                    
-                                                    <div>
-                                                         <img src='' alt='air-waybil-code'/>
-                                                    </div>
-                                                    
                                                </div>
                                                <div  style={{ backgroundColor:'', width:'100%', height:'45%'}}>
                                                      <div style={{ fontWeight:'800',fontSize:'18px', width:'100%' , }}>
@@ -145,8 +140,8 @@ export default function Receipt({data}){
                                                              
                                                         </div>
                                                     </div>
-                                                    <div style={{padding:'2px' , height:'33%'}}>
-                                                            <div style={{backgroundColor:'#fff' ,width:'100%', height:'40%', marginBottom:'4px'}}  >
+                                                    <div style={{padding:'2px' , height:'55%'}}>
+                                                            <div style={{backgroundColor:'#fff' ,width:'100%', height:'50%', marginBottom:'4px'}}  >
                                                                 Description of Cargo : <span className='data--details'>{data.shipmentDetails.descriptionOfCargo}</span>
                                                             </div>
                                                             <div style={{backgroundColor:'', fontWeight:'bold', fontSize:'20px',width:'100%', height:'98%'}}  >
@@ -168,7 +163,7 @@ export default function Receipt({data}){
                                 
                         </div>
 
-                        <div className='part--B' style={{width:'50%', backgroundColor:'red'}}>
+                        <div className='part--B' style={{width:'40%', backgroundColor:'red'}}>
                                <div style={{display:'flex', width:'100%' , justifyContent:'center', height:'8%'}}>
                                       <div style={{backgroundColor:'#fff', width:'49%' , margin:'2px'}}>
                                            Origin : <span className='data--details'>{data.origin}</span>

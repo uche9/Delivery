@@ -60,12 +60,10 @@ export default function Service(){
    return service_info     
     }
 
-    function handleScroll(){
-      document.getElementByClassName('service--container').style.opacity='0'
-    }
+   
 
     return(
-        <div className='service--container' onScroll={handleScroll} >
+        <div className='service--container'  >
              <div className='check'>Check out all our services</div>
             <div className='fleet'>OUR VEHICLE FLEET</div>
              <div  style={{display:'flex' ,justifyContent:'space-around', flexWrap:'wrap', fontSize:'10px' ,marginTop:'30px'}}>
