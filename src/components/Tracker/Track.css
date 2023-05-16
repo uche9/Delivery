@@ -1,0 +1,65 @@
+
+
+.tracker--container{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+}
+
+.portal{
+    font-size: 50px;
+    color: yellowgreen;
+    margin:50px;
+    font-weight: 400;
+}
+
+.tracker{
+    
+    height:50px;
+    border:5px;
+    border-radius: 6px;
+    background-color: #aaa;
+    text-align: center;
+    font-size: 30px;
+    margin:10px;
+    font-style:italic;
+    box-shadow: 3px 3px 3px red;
+}
+
+.tracker:focus{
+    animation:spread_shrink  3s;
+    animation-fill-mode:forwards;
+    border-style: inset;
+    background-color:yellow;
+    box-shadow: 3px 3px 3px red;
+}
+
+
+.tracker:hover{
+    background-color:yellow; 
+
+}
+
+@keyframes spread_shrink{
+    from{
+        width:130px;
+    }
+    to {
+        width:800px;
+    }
+}
+
+.label--tracker{
+    font-size: 28px;
+    color:#f22 ;
+}
+
+.check--status{
+    width:200px;
+    height:35px;
+    background-color: red;
+    border-radius: 50%;
+}

@@ -1,0 +1,93 @@
+*{
+    margin:0
+}
+
+.receipt--container{
+    margin-top: 100px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:80%;
+    height:auto;
+    animation: receipt 5s 
+}
+@keyframes receipt{
+   0%{ 
+    height: 0;
+    transform: translateY(-100px) rotate(0deg);
+    opacity:0
+    
+   }
+   100%{ 
+    height: 0;
+    transform: translateY(0px) rotateY(720deg);
+    opacity:1
+   }
+
+}
+
+
+
+.receipt{
+    color: #F66;
+    font-size:35px;
+}
+
+.receipt--form{
+    display:flex;
+    width: 100%; 
+  
+}
+
+.data--details{
+    font-size:17px;
+    font-weight:bold;
+}
+.part--A{
+    width:50%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.line{
+    height:10px;
+    width:99%;
+    background-color:yellow;
+    margin:15px
+}
+
+.sender, .receiver , .authorization{
+    width:100%;
+    height: auto;
+    
+}
+
+.zipcode, .country{
+    border:solid #555  3px;
+    width:50%;
+    padding:5px;
+}
+.authorization{
+    width:100%;
+    padding:0px;
+    border-radius:5px
+}
+.signature{
+    border:solid #555  3px;
+    width:100%;
+    padding:5px;
+}
+.shipment--details{
+   
+    font-style:italic;
+    
+}
