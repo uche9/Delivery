@@ -17,7 +17,7 @@ function ProgressBar(){
          },
          {
             key:2,
-            expertise:'margin',
+            expertise:'Margin',
             level:'75%'
          },
          {
@@ -32,12 +32,12 @@ function ProgressBar(){
             const progress_bar=progress_data.map(el=>{
                 
                 return(
-                    <div className='bars' style={{marginLeft:'100px'}}>
-                                            <label for='bar1' style={{color:'#222', fontStyle:'italic', fontSize:'20px'}}>{el.expertise}</label>
+                    <div className='bars' style={{marginBottom:'20px', marginLeft:'0px'}}>
+                                            <label for='bar1' style={{color:'#222', fontStyle:'italic', fontSize:'14px', fontFamily:'cursive'}}>{el.expertise}</label>
                                             <br />
-                                            <div style={{width:'500px', height:'20px', backgroundColor:'#aaa'}}  >
+                                            <div style={{width:'350px', height:'18px', backgroundColor:'#aaa',}}  >
                                                 <div style={{width:(el.level), height:'20px', backgroundColor:'#f00', display:'flex', justifyContent:'flex-end' , alignItems:'center'}} >
-                                                    <div style={{fontSize:'18px'}}>{el.level}</div>
+                                                    <div style={{fontSize:'14px'}}>{el.level}</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -71,7 +71,7 @@ function ProgressBar(){
                 const testimonial=testimonial_data.map(el=>{
                 
                 return(
-                        <div  className='testimonials' style={{width:'500px',height:'250px', display:'flex', flexDirection:'column', alignItems:'center' , justifyContent:'space-between'}}>            
+                        <div  className='testimonials' style={{padding:'30px',width:'400px',height:'250px', display:'flex', flexDirection:'column', alignItems:'center' , justifyContent:'space-between'}}>            
                                     
                                     <div style={{fontSize:'85px' , color:'#f22', fontWeight:'600'}}>
                                             {el.number}
@@ -94,34 +94,35 @@ function ProgressBar(){
         <div className='expertise--container'>
                   <div className='peace'>Peace of Mind</div>
                   <div className='expert'>OUR EXPERTISE</div>
-                  <div style={{display:'flex', alignItems:'center' , justifyContent:'space-between', }}>
+                  <div style={{display:'flex', padding:'30px' , alignItems:'center' , justifyContent:'center', }}>
                             <div>  
-                                  <div style={{display:'flex' }}>
-                                            <div>
-                                                <div style={{fontSize:'200px',marginTop:'-60px' , transform: 'rotate(180deg)'}}>,,</div>
-                                            </div>
-                                            <div className='quote'  style={{ padding:'5px', color:'#444', marginLeft:'5px' , width:'600px'}}>
-                                            {`Delivery Made Easy Inc, through continuous Innovation, relentless pursuit 
-                                            for Excellence, Efficiency, Foresight and un-matched execution capabilities along 
-                                            with personalized services, has emerged as the leading single window service provider
-                                            in offering Integrated and turnkey services in Shipping, Logistics, Indirect Taxation 
-                                            matters and International Trade`}
+                                  <div style={{width:'100%', display:'flex', justifyContent:'center',flexWrap:'wrap',}}>
+                                            <div style={{width:'50%', marginBottom:'50px', margin:'20px', display:'flex'}}>
+                                                    
+                                                    <div className='quote'  style={{ padding:'5px', color:'#444', marginLeft:'5px' , width:'100%'}}>
+                                                    {`Delivery Made Easy Inc, through continuous Innovation, relentless pursuit 
+                                                    for Excellence, Efficiency, Foresight and un-matched execution capabilities along 
+                                                    with personalized services, has emerged as the leading single window service provider
+                                                    in offering Integrated and turnkey services in Shipping, Logistics, Indirect Taxation 
+                                                    matters and International Trade`}
+                                                    </div>
+                                            </div>         
+                                            <div style={{width: 'auto'}}>
+                                               <ProgressBar />
                                             </div>
                                   </div>
                                     
                                     <div className='icons'>
-                                           { ['icon1', 'icon2' ,'icom3', 'icon4']}
+                                           { }
                                     </div>
                             </div>
-                            <div>
-                                 <ProgressBar />
-                            </div>
+                            
                             
                   </div>  
                   <div style={{marginTop:'50px'}}>
                          car separator Icon
                   </div>      
-                  <div  style={{display:'flex', justifyContent:'center', alignItems:'center', marginTop:'80px' }}>
+                  <div  style={{display:'flex',paddingRight:'50px', paddingLeft:'50px', justifyContent:'center', alignItems:'center', marginTop:'80px' , flexWrap:'wrap'}}>
                        <Testimonial />
                        
                   </div>          

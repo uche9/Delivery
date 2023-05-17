@@ -1,11 +1,11 @@
 import {Link,Outlet} from 'react-router-dom'
 import './NavBar.css';
 import logo from "./logo.jpeg";
-import search_icon from "../SVGData/search.png";
-import menu_icon from "../SVGData/menu.png";
-import close_icon from "../SVGData/close.png";
+//import search_icon from "../SVGData/search.png";
+//import menu_icon from "../SVGData/menu.png";
+//import close_icon from "../SVGData/close.png";
 import {useState, useEffect } from 'react'
-//import SVGData from '../SVGData/SVGData.js'
+import SVGData from '../SVGData/SVGData.js'
 
 
 
@@ -109,9 +109,9 @@ export default function NavBar(){
                                 <img className='logo' src={logo} alt='logo heres' />
 
                                 <div className='link--search'>
-                                    <div className='links'>
+                                        <div className='links'>
                                              {link_array}
-                                            <img  className='search--icon' src={search_icon} alt='search' />
+                                            <div  className='search--icon' >{SVGData[2].code} </div>
                                         </div>
                                 </div>
                         </div>
@@ -146,24 +146,31 @@ export default function NavBar(){
             return (
                       <div id='nav--bar--shrink' style={props.style1}>
                               <div className='nav--bar--container--shrink'>
-                                   <div style={{display:'flex', justifyContent:'space-between', width:'100%'}}>
-                                      <img className='logo' src={logo} alt='logo heres' />
-                                      <img id ='link' className='search--icon' src={search_icon} alt='search' />
-                                   </div>
-                                      
-      
-                                      <div className='link--search'>
+                                   <div style={{display:'flex', justifyContent:'space-between',alignItems:'center', width:'100%' , paddingRight:'40px'}}>
+                                      <img className='logo' src={logo} alt='logo heres' style={{marginLeft:'30px'}}/>
+
+                                    
+                                    <div className='link--search'>
                                          
                                          {drop? 
-                                            <img onClick={dropMenu} style={{width:'30px'}} src={menu_icon} alt='menu--icon'/>
+                                            <div onClick={dropMenu} style={{width:'30px'}} >{SVGData[0].code}</div>
                                               :
-                                            <img  onClick={closeMenu} style={{width:'30px'}}src={close_icon} alt='close--icon'/>
+                                            <div  onClick={closeMenu} style={{width:'30px'}}> {SVGData[1].code}</div>
                                          } 
                                          
                                          
-                                      </div>
-                                      
-                                        <LinkArray style3={{display:(!drop? 'block': 'none')}} />   
+                                    </div>
+
+                                   </div> 
+                                   <div>
+                                            <div  className=''  style={{display:(!drop? 'block': 'none') }} >
+                                                <LinkArray style3={{display:(!drop? 'block': 'none')}} />
+                                                <input type='text' className='search--box'  placeholder='search page' />   {SVGData[2].code} 
+                                            </div>                                
+                                            
+                                    </div>
+                                  
+                                       
                               
                               <div className='tab' style={props.style2}>
                                   

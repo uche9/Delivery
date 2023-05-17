@@ -5,5 +5,12 @@
 
 .who--we--are{
     border-radius:7px ;
-    background-color:'';
+    background-color:yellow;
+    width: 30%;
+    text-align: center;
+    box-shadow: 3px 2px 2px red;
+    justify-self: center;
+    align-items: center;
 }
+
+

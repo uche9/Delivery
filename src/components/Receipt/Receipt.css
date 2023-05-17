@@ -93,3 +93,16 @@
     font-style:italic;
     
 }
+
+.stamp{
+    width: 100px;
+    aspect-ratio:2;
+    transform: rotate(-30deg) scale(1.5) translate(40px,-5px);
+    opacity:0.3;
+    
+   }
+   
+   .autho{
+       background-color: rgb(27, 27, 26);
+       width: 100%;
+   }

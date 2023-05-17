@@ -50,10 +50,12 @@
 .upper--text{
     color:#fff;
     font-family:'';
-    font-size:29px;
+    font-size:24px;
     font-style:italic;
-    font-weight:700;
-    margin:0
+    font-weight:500;
+    margin:0;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
 }
 
 .underline{
@@ -61,13 +63,30 @@
     width:110px;
     height:5px;
     margin-top :20px;
+    margin-bottom :20px;
     border-radius:2px
 }
 .lower--text{
     color:#fff;
     font-family:'';
-    font-size:80px;
+    font-size:45px;
     font-style:'';
     font-weight:900;
-    margin:0 
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+
+.heart{
+    width:100px;
+    animation:pulse 3s  infinite  alternate 
+}
+
+  @keyframes pulse {
+    0% {
+        height:0px
+    }
+    100%{
+        height:120px;
+    }
+  }

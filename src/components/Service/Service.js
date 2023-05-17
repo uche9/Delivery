@@ -1,3 +1,4 @@
+import {useState, useEffect} from 'react'
 import './Service.css'
 import image_1 from './image_1.jpeg' 
 import image_2 from './image_2.jpeg' 
@@ -16,7 +17,7 @@ export default function Service(){
                     forwarding needs, whereas a faster, safer and cost-effective way 
                     to ship and track your cargo by air to anywhere across the globe? 
                     Look no further than Delivery Made Easy.`,
-            text3: 'Click for more'
+            text3: `FIND OUT MORE >>>`
 
         },
         {  
@@ -27,7 +28,7 @@ export default function Service(){
                     logistics provider that abides by your precise shipping needs with 
                     reliable, time reducing and cost-effective results, then the services
                    of Delivery Made Easy are right for you.`,
-            text3: 'Click for more'
+            text3: 'FIND OUT MORE >>>'
      },
         {
             key: 3,
@@ -36,11 +37,39 @@ export default function Service(){
             text2: `Delivery Made Easy is an active member of international groups of 
                     vetted forwarders in over 120 countries worldwide, 
                     many of which we have had relationships with since our inception.`,
-            text3: 'Click for more'
+            text3: 'FIND OUT MORE >>>'
         },
       
      ]
 
+      /* Set up container resizing function for image fitting 
+      * use useState & useEffect to generate window with.
+      * us if condition to adjust container size
+      */
+      const [width, setWidth]=useState(window.innerWidth)
+      const [cont_size, setContSize]=useState(window.innerWidth)
+      
+      useEffect(()=>{
+   
+       const handleResize=()=>{
+           setWidth( window.innerWidth)
+       } 
+   
+     
+       setContSize(()=>{
+           if(width>=1017) {
+               return 27   
+           }
+           else if(width<1000 && width>750){
+              return 90
+           }
+       })
+       
+       
+       window.addEventListener('resize', handleResize);
+       return ()=>window.removeEventListener('resize', handleResize);
+       
+      },[width])
 
 
     function KeyService(){
@@ -48,11 +77,11 @@ export default function Service(){
          
                     return(
                               
-                                    <div  style={{ padding:'10px', color:'#000',opacity:'1', width:'380px', margin:'0px 20px', borderRadius:'10px',boxShadow:'5px 5px 5px yellow', border:'none'}}>
-                                                <img style ={{width :'100%', height:'180px'}} alt='pics here'src={el.image}  className='serv--image' />
-                                                <p style={{ marginBottom:'15px', fontStyle:'italic',fontWeight:500, fontSize:'22px' , color:'#fff'}}>{el.text1}</p>
-                                                <p style={{marginBottom:'15px', fontWeight:'500', fontSize:'22px' ,color:'#fff'}}>{el.text2}</p>
-                                                <p style={{marginBottom:'10px', fontWeight:'500', fontSize:'20px', color:'#fff'}}>{el.text3}</p>
+                                    <div  style={{ padding:'10px', color:'#000',opacity:'1', width:`${cont_size}%`, margin:'0px 20px', borderRadius:'10px',boxShadow:'5px 5px 5px yellow', border:'none'}}>
+                                                <img style ={{width :'100%', aspectRatio:'2', marginBottom:'20px'}} alt='pics here'src={el.image}  className='serv--image' />
+                                                <p style={{ marginBottom:'15px',fontWeight:'700', fontSize:'20px' , color:'#fff'}}>{el.text1}</p>
+                                                <p style={{marginBottom:'15px', fontWeight:'400', fontSize:'14px' ,color:'#fff'}}>{el.text2}</p>
+                                                <p style={{marginBottom:'10px', fontWeight:'600', fontSize:'14px', color:'#fff'}}>{el.text3}</p>
                                     </div>
                 )
        })
@@ -64,7 +93,9 @@ export default function Service(){
 
     return(
         <div className='service--container'  >
+              
              <div className='check'>Check out all our services</div>
+               
             <div className='fleet'>OUR VEHICLE FLEET</div>
              <div  style={{display:'flex' ,justifyContent:'space-around', flexWrap:'wrap', fontSize:'10px' ,marginTop:'30px'}}>
                   

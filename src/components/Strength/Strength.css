@@ -4,9 +4,8 @@
 }
 
 .strength--container{
-    
-    position:'';
-    width:100%;
+    align-self: center;
+    width:95%;
     height: auto;
     display:flex;
     flex-wrap: wrap;
@@ -14,15 +13,28 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 20px;
-    padding-bottom: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 .background--image--strength {
     position:absolute;
+    top:0x;
     width:100%;
-    height: auto;
-    filter: brightness(40%);
-    opacity:0.2;
+    height: 100vmax;
+    filter: brightness(50%);
+    opacity:0.5;
     margin:0;
     z-index: -1;
+    
 }
+
+.why--choose--us{
+    font-size:20px ;
+    font-weight: 300;
+    margin-top: 50px;
+    margin-bottom:10px ;
+    font-style: italic;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;    
+}
+

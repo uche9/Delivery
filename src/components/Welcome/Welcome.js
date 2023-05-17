@@ -7,11 +7,11 @@ export default function Welcome(){
    
     const welcome_data=[
             {
-              upperText:'Welcome To Our Company',
+              upperText:'Welcome to Our company',
               lowerText:'DELIVERY MADE EASY'
            },
            {
-            upperText:'Percel Deliveries',
+            upperText:'Percel deliveries',
             lowerText:'AROUND THE WORLD'
          },
 
@@ -32,17 +32,23 @@ export default function Welcome(){
 
 
     return(
-    <div className='welcome--container'>
-         
-        <div className='left--arrow'>  </div>
-               <img src={count===0? image1:image2} alt='pics' className='background--image--1'   /> 
-                                
-        <div class='welcome--message'  >
-             <p className='upper--text'>{welcome_data[count].upperText}</p>
-             <div className='underline' ></div>
-             <p className='lower--text'>{welcome_data[count].lowerText}</p>
-        </div>
-        <div className='right--arrow' style={{color:'red'}}>  </div>
-    </div>
+      <> 
+            <div className='welcome--container'>
+            
+                <div className='left--arrow'>  </div>
+                        <img src={count===0? image1:image2} alt='pics' className='background--image--1'   /> 
+                                        
+                <div class='welcome--message'  >
+                      <p className='upper--text'>{welcome_data[count].upperText}</p>
+                      <div className='underline' ></div>
+                      <p className='lower--text'>{welcome_data[count].lowerText}</p>
+                </div>
+                <div className='right--arrow' style={{color:'red'}}>  </div>
+            </div>
+            <div className={count===0?'heart':''}>
+                  
+            </div>
+      </>
+    
   )
 }

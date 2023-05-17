@@ -3,7 +3,7 @@ import Strength from '../Strength/Strength.js'
 
 export default function WhoWeAre(){
 
-    const who_we_are_data=['FOUNDED IN 2008', 'OPERATING IN 34 COUNTRIES', 'MASTER OF LAND SEA AND AIR']
+    const who_we_are_data=['Founded in 2008', 'Operating in over 200 countries', 'Master of Land Sea and Air']
     const who_we_are=who_we_are_data.map(el=>{
         return(
             <div className='who--we--are'>{el}</div>

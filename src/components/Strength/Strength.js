@@ -1,3 +1,4 @@
+import {useState, useEffect} from 'react'
 import './Strength.css'
 import image3 from './image3.jpeg' 
 import image_1 from './image_1.jpeg' 
@@ -44,6 +45,41 @@ export default function Strength(){
         },
      ]
 
+      /*Resizable window
+      */
+
+       //Generate window width
+   const [width, setWidth]=useState(window.innerWidth)
+   const [cont_size, setContSize]=useState(window.innerWidth)
+   
+   useEffect(()=>{
+
+    const handleResize=()=>{
+        setWidth( window.innerWidth)
+    } 
+
+  
+    setContSize(()=>{
+        if(width>=1000) {
+            return 19   
+        }
+        else if(width<1000 && width>750){
+           return 40
+        }
+    })
+    
+    
+    window.addEventListener('resize', handleResize);
+    return ()=>window.removeEventListener('resize', handleResize);
+    
+   },[width])
+
+    // Use width values to assign container size
+     
+  // var cont_size;
+  
+    
+
 
 
     function KeyStrength(){
@@ -51,11 +87,11 @@ export default function Strength(){
          
                     return(
                               
-                                    <div style={{ padding:'10px', color:'#000',opacity:'1', width:'250px', margin:'0px 30px', borderRadius:'5px', boxShadow:'5px 5px 3px yellow', border:'none'}}>
-                                                <img style ={{width :'100%', height:'150px'}} alt='pics here'src={el.image} />
-                                                <p style={{ marginBottom:'15px', fontStyle:'italic',fontWeight:500, fontSize:'18px'}}>{el.text1}</p>
-                                                <p style={{marginBottom:'15px', fontWeight:'900', fontSize:'30px' ,color:'red'}}>{el.text2}</p>
-                                                <p style={{marginBottom:'10px', fontWeight:'500', fontSize:'18px'}}>{el.text3}</p>
+                                    <div style={{marginBottom:'50px', paddingLeft:'20px', paddingTop:'30px',paddingRight:'0px', color:'#000',opacity:'1', width:`${cont_size}%`, margin:'0px 2px', borderRadius:'5px', boxShadow:'5px 5px 3px yellow', border:'none'}}>
+                                                <img style ={{ borderRadius:'5px' ,filter: 'brightness(100%)' ,width :'100%', aspectRatio:'1.9', marginBottom:'25x'}} alt='pics here'src={el.image} />
+                                                <p style={{ marginBottom:'12px', fontStyle:'italic',fontWeight:350, fontSize:'15px'}}>{el.text1}</p>
+                                                <p style={{marginBottom:'15px', fontWeight:'600', fontSize:'25px' ,color:'red'}}>{el.text2}</p>
+                                                <p style={{marginBottom:'10px', fontWeight:'400', fontSize:'15px'}}>{el.text3}</p>
                                     </div>
                 )
        })
@@ -67,9 +103,10 @@ export default function Strength(){
     return(
         <div className='strength--container' >
              <img src={image3} alt='pics' className='background--image--strength'   />
-             <p style={{ fontSize:'20px' , fontWeight:500, marginBottom:'10px', fontStyle:'italic'}}>Why you should choose us?</p>
-             <p style={{fontWeight:800, fontSize:'40px', marginTop:'20px', color:'rgb(255,50,50)'}}>OUR STRENGTHS AND OUR ADVANTAGES</p>
-             <div  style={{display:'flex' ,justifyContent:'space-around', flexWrap:'wrap', fontSize:'10px' ,marginTop:'30px'}}>
+              
+             <p className='why--choose--us'>Why you should choose us?</p>
+             <p style={{fontWeight:600, textAlign:'center', fontSize:'27px', marginTop:'20px', color:'rgb(255,50,50)'}}>OUR STRENGTHS AND OUR ADVANTAGES</p>
+             <div  style={{display:'flex' ,justifyContent:'space-between', flexWrap:'wrap', fontSize:'10px' ,marginTop:'30px'}}>
                   
                   <KeyStrength  />
             </div>    

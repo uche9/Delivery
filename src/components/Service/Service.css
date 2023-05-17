@@ -9,21 +9,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding:100px 0;
+    padding:80px 0;
     color: #fff;
 }
 
 .check{
 font-style:italic;
-font-size: 30px;
+font-size: 20px;
 font-weight: 500;
-margin-bottom: 50px;
+margin-bottom: 20px;
 }
 
 .fleet{
     
-    font-size: 60px;
-    font-weight: 900;
-    margin-bottom: 50px;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 35px;
 
 }

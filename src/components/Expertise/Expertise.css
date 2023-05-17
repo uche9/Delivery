@@ -3,7 +3,7 @@
 }
 
 .expertise--container{
-    margin-top:50px;
+    margin-top:10px;
     position:'';
     background-color:#ddd;
     width:100%;
@@ -13,9 +13,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding:40px 0;
+    align-self: center;
+    padding-left:0px;
+    padding-right:0px;
     color: #fff;
     opacity: 0.9;
+    padding-top: 100px;
 }
 
 
@@ -23,16 +26,16 @@
 .peace{
     color:#000;
     font-style:italic;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 300;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     }
     
 .expert{
         color:#000;
-        font-size: 60px;
-        font-weight: 800;
-        margin-bottom: 100px;
+        font-size: 40px;
+        font-weight: 500;
+        margin-bottom: 70px;
     }
 
 
