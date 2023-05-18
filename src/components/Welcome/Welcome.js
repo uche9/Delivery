@@ -45,9 +45,9 @@ export default function Welcome(){
                 </div>
                 <div className='right--arrow' style={{color:'red'}}>  </div>
             </div>
-            <div className={count===0?'heart':''}>
+            {/*<div className={count===0?'heart':''}>
                   
-            </div>
+             </div> */}
       </>
     
   )

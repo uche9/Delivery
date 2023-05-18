@@ -84,7 +84,7 @@ export default function Receipt({data}){
                                                 <div style={{ fontWeight:'bold',fontSize:'18px'}}>
                                                     {`3. SENDER AUTHORIZATION `} 
                                                 </div>
-                                                <div style={{backgroundColor:'#ccc' , width:'100%'}}>
+                                                <div className='autho'>
                                                         <div>
                                                             <br />
                                                             

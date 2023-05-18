@@ -77,11 +77,11 @@ export default function Service(){
          
                     return(
                               
-                                    <div  style={{ padding:'10px', color:'#000',opacity:'1', width:`${cont_size}%`, margin:'0px 20px', borderRadius:'10px',boxShadow:'5px 5px 5px yellow', border:'none'}}>
-                                                <img style ={{width :'100%', aspectRatio:'2', marginBottom:'20px'}} alt='pics here'src={el.image}  className='serv--image' />
-                                                <p style={{ marginBottom:'15px',fontWeight:'700', fontSize:'20px' , color:'#fff'}}>{el.text1}</p>
-                                                <p style={{marginBottom:'15px', fontWeight:'400', fontSize:'14px' ,color:'#fff'}}>{el.text2}</p>
-                                                <p style={{marginBottom:'10px', fontWeight:'600', fontSize:'14px', color:'#fff'}}>{el.text3}</p>
+                                    <div  style={{ paddingTop:'5px',paddingRight:'5px',paddingLeftight:'5px', color:'#000',opacity:'1', width:`${cont_size}%`, margin:'0px 20px', borderRadius:'10px',boxShadow:'5px 5px 5px yellow', border:'none'}}>
+                                                <img style ={{width :'100%', aspectRatio:'2', marginBottom:'5px'}} alt='pics here'src={el.image}  className='serv--image' />
+                                                <p style={{padding:'20px', marginBottom:'15px',fontWeight:'700', fontSize:'20px' , color:'#fff'}}>{el.text1}</p>
+                                                <p style={{padding:'20px' , marginBottom:'15px', fontWeight:'400', fontSize:'14px' ,color:'#fff'}}>{el.text2}</p>
+                                                <p style={{padding:'20px' , marginBottom:'10px', fontWeight:'600', fontSize:'14px', color:'#fff'}}>{el.text3}</p>
                                     </div>
                 )
        })

@@ -87,11 +87,11 @@ export default function Strength(){
          
                     return(
                               
-                                    <div style={{marginBottom:'50px', paddingLeft:'20px', paddingTop:'30px',paddingRight:'0px', color:'#000',opacity:'1', width:`${cont_size}%`, margin:'0px 2px', borderRadius:'5px', boxShadow:'5px 5px 3px yellow', border:'none'}}>
+                                    <div style={{marginBottom:'50px', paddingLeft:'10px', paddingTop:'20px',paddingRight:'10px', color:'#000',opacity:'1', width:`${cont_size}%`, margin:'0px 2px', borderRadius:'5px', boxShadow:'5px 5px 3px yellow', border:'none'}}>
                                                 <img style ={{ borderRadius:'5px' ,filter: 'brightness(100%)' ,width :'100%', aspectRatio:'1.9', marginBottom:'25x'}} alt='pics here'src={el.image} />
-                                                <p style={{ marginBottom:'12px', fontStyle:'italic',fontWeight:350, fontSize:'15px'}}>{el.text1}</p>
-                                                <p style={{marginBottom:'15px', fontWeight:'600', fontSize:'25px' ,color:'red'}}>{el.text2}</p>
-                                                <p style={{marginBottom:'10px', fontWeight:'400', fontSize:'15px'}}>{el.text3}</p>
+                                                <p style={{padding:'20px', marginBottom:'1px', fontStyle:'italic',fontWeight:350, fontSize:'15px'}}>{el.text1}</p>
+                                                <p style={{padding:'20px', marginBottom:'1px', fontWeight:'600', fontSize:'25px' ,color:'red'}}>{el.text2}</p>
+                                                <p style={{padding:'20px', marginBottom:'1px', fontWeight:'400', fontSize:'15px'}}>{el.text3}</p>
                                     </div>
                 )
        })

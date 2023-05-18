@@ -146,7 +146,7 @@ export default function NavBar(){
             return (
                       <div id='nav--bar--shrink' style={props.style1}>
                               <div className='nav--bar--container--shrink'>
-                                   <div style={{display:'flex', justifyContent:'space-between',alignItems:'center', width:'100%' , paddingRight:'40px'}}>
+                                   <div style={{display:'flex', justifyContent:'space-around',alignItems:'center', width:'100%' , paddingRight:'0px'}}>
                                       <img className='logo' src={logo} alt='logo heres' style={{marginLeft:'30px'}}/>
 
                                     
@@ -184,7 +184,7 @@ export default function NavBar(){
         
          
     return(
-        <> 
+        < div style={{paddingLeft:'0px', paddingRight:'0px'}}> 
             
             
             {/*Nav Bar Conditional rendering */} 
@@ -196,7 +196,7 @@ export default function NavBar(){
             { scroller>150 &&  width <900 && <NavBarShrink  style1={{ position:'fixed', top: '0px'}} style2={{display:'none'}}/> }
             
             
-        </>
+        </div>
         
     )
 }
