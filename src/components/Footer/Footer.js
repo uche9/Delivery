@@ -50,9 +50,9 @@ export default function Footer(){
     return(
         <div className="super--footer--container">
                  <div className='footer--container' style={{display:'flex', margin:'40px'}}>
-                    <div style={{width:'60%'}}>
-                        <div style={{margin:'20px'}}  >
-                            <img src={logo}  alt='logo here' style={{width:'280px', height:'100px', zIndex:'+1', borderRadius:'4px'}}/>
+                    <div style={{width:'50%'}}>
+                        <div style={{margin:'10px' }}  >
+                            <img src={logo}  alt='logo here' style={{width:'80%',  zIndex:'+1', borderRadius:'4px'}}/>
                         </div>
                         <div style={{width:'80%' ,margin:'20px', fontSize:'14px', fontWeight:'180',color:'#fff', marginBottom:'30px', }}>
                         {`Delivery Made Easy  has remained fully dedicated to meeting their customer
