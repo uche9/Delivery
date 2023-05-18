@@ -50,7 +50,7 @@ export default function Footer(){
     return(
         <div className="super--footer--container">
                  <div className='footer--container' style={{display:'flex', margin:'40px'}}>
-                    <div>
+                    <div style={{width:'60%'}}>
                         <div style={{margin:'20px'}}  >
                             <img src={logo}  alt='logo here' style={{width:'280px', height:'100px', zIndex:'+1', borderRadius:'4px'}}/>
                         </div>
@@ -61,17 +61,19 @@ export default function Footer(){
                         cost & maximizing revenues.`}
                         </div>
                         
+                       
                     </div>  
-                    <div>
-
-                        <div className='more--detail--container' style={{display:'flex', justifyContent:'space-between', width:'400px'}}>
-                              
-                            <LinkDetails head={'Our Fleet'}  details={our_fleet_array}  />   
-                            <LinkDetails head={'Quick Links'}  details={our_link_array}  />  
-
-                        </div>
+                    
                         
-            </div>
+                    <div className='more--detail--container' style={{display:'flex',flexWrap:'wrap', justifyContent:''}}>
+                              
+                        <LinkDetails head={'Our Fleet'}  details={our_fleet_array}  /> 
+                        <LinkDetails head={'Quick Links'}  details={our_link_array}  />       
+                           
+
+                   </div>
+                        
+                  
         </div>
 
         <div style={{ textAlign:'center', width:'100%',color:'#fff', marginBottom:'10px'}}>
