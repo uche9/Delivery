@@ -71,7 +71,7 @@ function ProgressBar(){
                 const testimonial=testimonial_data.map(el=>{
                 
                 return(
-                        <div  className='testimonials' style={{padding:'30px',width:'400px',height:'250px', display:'flex', flexDirection:'column', alignItems:'center' , justifyContent:'space-between'}}>            
+                        <div  className='testimonials' style={{padding:'30px',width:'80%', display:'flex', flexDirection:'column', alignItems:'center' , justifyContent:'space-between'}}>            
                                     
                                     <div style={{fontSize:'85px' , color:'#f22', fontWeight:'600'}}>
                                             {el.number}
@@ -97,7 +97,7 @@ function ProgressBar(){
                   <div style={{display:'flex', padding:'30px' , alignItems:'center' , justifyContent:'center', }}>
                             <div>  
                                   <div style={{width:'100%', display:'flex', justifyContent:'center',flexWrap:'wrap',}}>
-                                            <div style={{width:'50%', marginBottom:'50px', margin:'20px', display:'flex'}}>
+                                            <div style={{width:'50%',padding:'30px', marginBottom:'50px', margin:'20px', display:'flex'}}>
                                                     
                                                     <div className='quote'  style={{ padding:'5px', color:'#444', marginLeft:'5px' , width:'100%'}}>
                                                     {`Delivery Made Easy Inc, through continuous Innovation, relentless pursuit 
@@ -122,7 +122,7 @@ function ProgressBar(){
                   <div style={{marginTop:'50px'}}>
                          car separator Icon
                   </div>      
-                  <div  style={{display:'flex',paddingRight:'50px', paddingLeft:'50px', justifyContent:'center', alignItems:'center', marginTop:'80px' , flexWrap:'wrap'}}>
+                  <div  style={{display:'flex',width:'80%',paddingRight:'50px', paddingLeft:'50px', justifyContent:'center', alignItems:'center', marginTop:'80px' , flexWrap:'wrap'}}>
                        <Testimonial />
                        
                   </div>          
