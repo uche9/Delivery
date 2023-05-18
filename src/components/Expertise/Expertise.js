@@ -35,7 +35,7 @@ function ProgressBar(){
                     <div className='bars' style={{marginBottom:'20px', marginLeft:'0px'}}>
                                             <label for='bar1' style={{color:'#222', fontStyle:'italic', fontSize:'14px', fontFamily:'cursive'}}>{el.expertise}</label>
                                             <br />
-                                            <div style={{width:'350px', height:'18px', backgroundColor:'#aaa',}}  >
+                                            <div style={{width:'250px', height:'18px', backgroundColor:'#aaa',}}  >
                                                 <div style={{width:(el.level), height:'20px', backgroundColor:'#f00', display:'flex', justifyContent:'flex-end' , alignItems:'center'}} >
                                                     <div style={{fontSize:'14px'}}>{el.level}</div>
                                                 </div>

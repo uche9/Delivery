@@ -49,12 +49,12 @@ export default function Footer(){
 
     return(
         <div className="super--footer--container">
-                 <div className='footer--container' style={{display:'flex', margin:'40px'}}>
-                    <div style={{width:'50%'}}>
-                        <div style={{margin:'10px' }}  >
+                 <div className='footer--container' style={{display:'flex', alignItems:'center', margin:'0px'}}>
+                    <div style={{width:'45%'}}>
+                        <div style={{margin:'5px' }}  >
                             <img src={logo}  alt='logo here' style={{width:'80%',  zIndex:'+1', borderRadius:'4px'}}/>
                         </div>
-                        <div style={{width:'80%' ,margin:'20px', fontSize:'14px', fontWeight:'180',color:'#fff', marginBottom:'30px', }}>
+                        <div style={{width:'80%' ,margin:'5px', fontSize:'14px', fontWeight:'180',color:'#fff', marginBottom:'30px', }}>
                         {`Delivery Made Easy  has remained fully dedicated to meeting their customer
                         logistics and transportation needs. Delivery Made Easy carefully evaluates each
                         customer and determines how to most efficiently meet those needs, while minimizing 
@@ -69,8 +69,6 @@ export default function Footer(){
                               
                         <LinkDetails head={'Our Fleet'}  details={our_fleet_array}  /> 
                         <LinkDetails head={'Quick Links'}  details={our_link_array}  />       
-                           
-
                    </div>
                         
                   
