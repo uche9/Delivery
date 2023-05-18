@@ -32,7 +32,7 @@ export default function Footer(){
 
       function LinkDetails(props){
         return(
-                   <div  style={{width:'100%', color:'#fff'}}>
+                   <div  style={{width:'60%', color:'#fff'}}>
                             <div style={{marginBottom:'20px',color:'#f33', fontWeight:'600' , fontSize:'28px'}}>
                                  {props.head}
                             </div>
