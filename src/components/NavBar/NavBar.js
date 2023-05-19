@@ -11,6 +11,8 @@ import SVGData from '../SVGData/SVGData.js'
 
 export default function NavBar(){
    
+    //New way
+    const [active_way, setActiveWay]=useState((window.location.pathname).slice(1))
 
     //Rendering Nav bar During scrolling
   
@@ -108,7 +110,7 @@ export default function NavBar(){
   
        
     function NavBarSpread ({style1,style2,active}){
-        const [active_way, setActiveWay]=useState((window.location.pathname).slice(1))
+       
 
          //set tab color for selected tab after page loads
          
@@ -122,7 +124,7 @@ export default function NavBar(){
         document.getElementById(active_way).style.backgroundColor='yellow'   
         },0)
 
-    },[active_way]) 
+    },[]) 
             
           
              
@@ -131,7 +133,7 @@ export default function NavBar(){
       
       return (
                 <div id='nav--bar--spread' style={style1}   > 
-                      {scroller}
+                      
                         <div className='nav--bar--container'>
 
                                 <img className='logo' src={logo} alt='logo heres' />
@@ -155,7 +157,16 @@ export default function NavBar(){
          function NavBarShrink (props){
 
              //set tab color for selected tab after page loads
+             useEffect(()=>{
+                setActiveWay( (window.location.pathname).slice(1))
         
+                setTimeout(()=>{
+                     
+                
+                document.getElementById(active_way).style.backgroundColor='yellow'   
+                },0)
+        
+            },[]) 
             
          
               
@@ -218,7 +229,8 @@ export default function NavBar(){
                     
                  
             
-             
+            //Change tab color
+           
          
     return(
         < div id='nav--bar' style={{paddingLeft:'0px', paddingRight:'0px'}}> 
@@ -228,7 +240,9 @@ export default function NavBar(){
             
             
             { scroller >=0 && width >900 && <NavBarSpread/> }
-            { scroller>150 &&  width >900 && <NavBarSpread active={{backgroundColor:'yellow'}} style1={{  position:'fixed', top:'0px'}} style2={{display:'none'}}/> }
+            { scroller>150 &&  width >900  
+             &&<NavBarSpread active={{backgroundColor:'yellow'}} style1={{  position:'fixed', top:'0px'}} style2={{display:'none'}}/>
+             }
             { scroller >=0 && width <900 &&  <NavBarShrink />}
             { scroller>150 &&  width <900 && <NavBarShrink  style1={{ position:'fixed', top: '0px'}} style2={{display:'none'}}/> }
             
