@@ -27,10 +27,20 @@ export default function NavBar(){
     return ()=>window.removeEventListener('scroll', handleScroll);
     
    },[scroller]) 
+
+   
+
    //Rendering Nav Bar During width resize
    const [width, setWidth]=useState(window.innerWidth)
    
+   
    useEffect(()=>{
+
+
+    //set tab color for selected tab after page loads
+    
+       
+    
 
     const handleResize=()=>{
         setWidth( window.innerWidth)
@@ -72,8 +82,8 @@ export default function NavBar(){
             return( 
                 <>
                       
-                     <Link    to={'/'+el.way} onClick={()=>handlePath(el)} className='super--link'> 
-                         <div  id={el.way} className='link'>{el.place}</div>                
+                     <Link  id={el.way}  to={'/'+el.way} onClick={()=>handlePath(el)} className='super--link'> 
+                         <div   className='link'>{el.place}</div>                
                     </Link> 
                     <Outlet />  
                    
@@ -86,24 +96,42 @@ export default function NavBar(){
                
         /* Function to set URL  */
          function handlePath(el){
-             //setActiveWay( el.way) 
-             //window.location.pathname= active_way;
+            //Scroll to top of new page
+
+             var element=document.getElementById('nav--bar')
+             element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" })    
+
              
-             setTimeout(()=>{
-                document.getElementById(el.way).style.backgroundColor='yellow';
-                document.getElementById(el.way).style.fontSize='23px';
-                document.getElementById(el.way).style.borderRadius='4px';
-             },0)  
-             
+                    
          }
          
   
        
-    function NavBarSpread ({style1,style2}){
+    function NavBarSpread ({style1,style2,active}){
+        const [active_way, setActiveWay]=useState((window.location.pathname).slice(1))
+
+         //set tab color for selected tab after page loads
+         
+
+       useEffect(()=>{
+        setActiveWay( (window.location.pathname).slice(1))
+
+        setTimeout(()=>{
+             
+        
+        document.getElementById(active_way).style.backgroundColor='yellow'   
+        },0)
+
+    },[active_way]) 
+            
+          
+             
+         
+         
       
       return (
                 <div id='nav--bar--spread' style={style1}   > 
-                      
+                      {scroller}
                         <div className='nav--bar--container'>
 
                                 <img className='logo' src={logo} alt='logo heres' />
@@ -125,6 +153,11 @@ export default function NavBar(){
      
 
          function NavBarShrink (props){
+
+             //set tab color for selected tab after page loads
+        
+            
+         
               
                const[drop,setDrop]=useState(true)
 
@@ -180,18 +213,22 @@ export default function NavBar(){
                  )
              }
 
+            
 
-        
+                    
+                 
+            
+             
          
     return(
-        < div style={{paddingLeft:'0px', paddingRight:'0px'}}> 
+        < div id='nav--bar' style={{paddingLeft:'0px', paddingRight:'0px'}}> 
             
             
             {/*Nav Bar Conditional rendering */} 
             
             
             { scroller >=0 && width >900 && <NavBarSpread/> }
-            { scroller>150 &&  width >900 && <NavBarSpread  style1={{ position:'fixed', top:'0px'}} style2={{display:'none'}}/> }
+            { scroller>150 &&  width >900 && <NavBarSpread active={{backgroundColor:'yellow'}} style1={{  position:'fixed', top:'0px'}} style2={{display:'none'}}/> }
             { scroller >=0 && width <900 &&  <NavBarShrink />}
             { scroller>150 &&  width <900 && <NavBarShrink  style1={{ position:'fixed', top: '0px'}} style2={{display:'none'}}/> }
             

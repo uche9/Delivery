@@ -94,20 +94,28 @@ div.links{
     color:#333;
     text-decoration-style:none
 }
-.super--link{
-    text-decoration:none
-}
 
-.link:hover{
-   
+
+.link:hover{  
     margin:20px; 
     font-size: 15px;
     font-weight: 700;
     color:#f22;
-    transition:1s;
+    transition:1s;  
+}
+
+.link:active{  
+    margin:20px; 
+    font-size: 15px;
+    font-weight: 700;
+    color:#f22;
+    transition:1s; 
     
 }
 
+.super--link{
+    text-decoration:none
+}
 
 
 

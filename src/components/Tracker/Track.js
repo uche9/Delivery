@@ -63,18 +63,20 @@ function handleChange(event){
  return(
          <div className='tracker--container'>
 
-              <div className='portal'>
-                TRACKER PORTAL
-              </div>
+              
               <div>
+                 <div className='portal'>
+                     TRACKER PORTAL
+                 </div>
+                 
                 
-                 <label html for='tracker'> Enter Tracking ID</label>
-                 <input type='text' onChange={handleChange} placeholder='Enter Tracking Id' id='tracker' className='tracker'  value={entry}/>
                 
              </div>
-                
+             <div>
+                      <input type='text' onChange={handleChange} placeholder='Enter Tracking Id' id='tracker' className='tracker'  value={entry}/>
+              </div>
               <div >
-                Response : {response}               
+                Response : <span style={{fontSize:'25px'}}>{response}</span>                
                </div>
                { search_permit && <div > {feedback}</div>}
                { search_permit && client_data.length===1 && <Receipt xx={2}  data={client_data[0]}  />}

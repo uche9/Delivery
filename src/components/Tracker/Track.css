@@ -14,10 +14,11 @@
     color: yellowgreen;
     margin:50px;
     font-weight: 400;
+    text-align: center;
 }
 
 .tracker{
-    
+    align-self: center;
     height:50px;
     border:5px;
     border-radius: 6px;
@@ -45,10 +46,10 @@
 
 @keyframes spread_shrink{
     from{
-        width:130px;
+        width:100px;
     }
     to {
-        width:800px;
+        width:500px;
     }
 }
 
