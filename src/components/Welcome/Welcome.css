@@ -12,9 +12,9 @@
 .background--image--1{
        z-index:-1;
        width:100%;
-       height:500px;
+       aspect-ratio: 2.5;
        --webkit-filter:blur(7px);
-       filter:brightness(50%);
+       filter:brightness(70%);
        margin:0;
     
 }

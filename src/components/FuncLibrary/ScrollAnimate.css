@@ -1,0 +1,30 @@
+
+
+#box{
+    border:solid black ;
+    font-size: 30px;
+    background-color: yellow;
+    
+}
+
+.ani--strength--info{
+ background-color: '';
+ animation:slide 0.5s forwards;
+ 
+}
+
+
+@keyframes slide {
+    0% {
+        transform:translateX(-100px) rotate(0deg) scale(0.2);
+        opacity:0;
+        
+    }
+
+    100% {
+        transform:translateX(0px) rotate(360deg) scale(1);
+        opacity:1;
+        
+    }
+
+}

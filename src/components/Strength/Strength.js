@@ -1,3 +1,5 @@
+
+import ScrollAnimate from '../FuncLibrary/ScrollAnimate.js'
 import {useState, useEffect} from 'react'
 import './Strength.css'
 import image3 from './image3.jpeg' 
@@ -12,6 +14,7 @@ export default function Strength(){
      const strength_data=[
         { 
             key: 1,
+            id:'strength1',
             image:image_1,
             text1: 'Around the world',
             text2: 'Shipping',
@@ -21,6 +24,7 @@ export default function Strength(){
         },
         {  
             key: 2,
+            id:'strength2',
             image:image_2,
             text1: '24hr a day',
             text2: 'Courier Delivery',
@@ -29,6 +33,7 @@ export default function Strength(){
         },
         {
             key: 3,
+            id:'strength3',
             image: image_3,
             text1: 'New Service',
             text2: 'B2B Exchange',
@@ -37,6 +42,7 @@ export default function Strength(){
         },
         {
             key: 4,
+            id:'strength4',
             image:image_4,
             text1: '7 days a week',
             text2: 'Logistics',
@@ -83,11 +89,12 @@ export default function Strength(){
 
 
     function KeyStrength(){
-       const strength_info=strength_data.map( el =>{
+       const strength_info=strength_data.map( (el,index) =>{
          
                     return(
                               
-                                    <div style={{marginBottom:'50px', paddingLeft:'10px', paddingTop:'20px',paddingRight:'10px', color:'#000',opacity:'1', width:`${cont_size}%`, margin:'0px 2px', borderRadius:'5px', boxShadow:'5px 5px 3px yellow', border:'none'}}>
+                                    <div id={'strength'+index} style={{opacity:0, marginBottom:'50px', paddingLeft:'10px', paddingTop:'20px',paddingRight:'10px', color:'#000', width:`${cont_size}%`, margin:'0px 2px', borderRadius:'5px', boxShadow:'5px 5px 3px yellow', border:'none'}}>
+                                                <ScrollAnimate idName={'strength'+index} index={index}/> 
                                                 <img style ={{ borderRadius:'5px' ,filter: 'brightness(100%)' ,width :'100%', aspectRatio:'1.9', marginBottom:'25x'}} alt='pics here'src={el.image} />
                                                 <p style={{padding:'20px', marginBottom:'1px', fontStyle:'italic',fontWeight:350, fontSize:'15px'}}>{el.text1}</p>
                                                 <p style={{padding:'20px', marginBottom:'1px', fontWeight:'600', fontSize:'25px' ,color:'red'}}>{el.text2}</p>
@@ -102,13 +109,15 @@ export default function Strength(){
 
     return(
         <div className='strength--container' >
+               
              <img src={image3} alt='pics' className='background--image--strength'   />
-              
+             
              <p className='why--choose--us'>Why you should choose us?</p>
              <p style={{fontWeight:600, textAlign:'center', fontSize:'27px', marginTop:'20px', color:'rgb(255,50,50)'}}>OUR STRENGTHS AND OUR ADVANTAGES</p>
-             <div  style={{display:'flex' ,justifyContent:'space-between', flexWrap:'wrap', fontSize:'10px' ,marginTop:'30px'}}>
+             <div id='key--strength' style={{display:'flex' ,justifyContent:'space-between', flexWrap:'wrap', fontSize:'10px' ,marginTop:'30px'}}>
                   
-                  <KeyStrength  />
+                  <KeyStrength   />
+                  
             </div>    
         </div>
 
