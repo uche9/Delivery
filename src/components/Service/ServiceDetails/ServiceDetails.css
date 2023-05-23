@@ -1,5 +1,6 @@
 .conatainer--service--details{
-    color:#bbb
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .super--container{
@@ -17,12 +18,14 @@
     justify-content: center;
     align-items: center;
     align-self: center;
-
+    width: 80%;
+    aspect-ratio: 1.4;
+    background-color:red;
 }
 
 .background-image-1{
     width: 100%;
-    aspect-ratio: 4;
+    aspect-ratio: 1.8;
     position:absolute;
     z-index: -1;
     filter: brightness(30%);
@@ -68,7 +71,7 @@
 
 .image--para{
     width: 100%;
-    aspect-ratio: 3;
+    aspect-ratio: 1.5;
     position:'';
     z-index: -1;
     filter: brightness(100%);
@@ -77,6 +80,7 @@
     font-size: 40px;
     color: #444;
     font-weight: 600;
+    text-align: center;
     font-family:'Times New Roman', Times, serif;
 }
 .upper--para{

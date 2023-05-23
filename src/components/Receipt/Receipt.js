@@ -1,7 +1,7 @@
 import './Receipt.css'
 import logo from './logo.jpeg'
 import background_image from  './logo.jpeg'
-import stamp from './stamp.jpeg'
+//import stamp from './stamp.jpeg'
 
 
 export default function Receipt({data}){
@@ -92,7 +92,7 @@ export default function Receipt({data}){
                                                         <div style={{display:'flex',width:'100%'}}>
                                                             
                                                             <div className='signature'>
-                                                                Signature: <img src={stamp} alt='receipt' className='stamp'  />
+                                                               {/* Signature: <img src={stamp} alt='receipt' className='stamp'  /> */}
                                                             </div>
                                                         </div>
                                                 </div>
