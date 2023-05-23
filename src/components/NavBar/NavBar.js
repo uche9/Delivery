@@ -188,16 +188,16 @@ export default function NavBar(){
     return(
         <>
         
-            < div id='nav--bar' style={{paddingLeft:'0px', paddingRight:'0px'}}> 
+            < div id='nav--bar' style={{width:'100%', aspectRatio:`${width>900 ? 20 : 5 }`}}> 
             
             
             {/*Nav Bar Conditional rendering */} 
             
             
-            { scroller >=0 &&  width >=900 && <NavBarSpread style1={{ position:'relative', top: '0px'}} style2={{ aspectRatio:19, display:'block',}}/> }
+            { scroller >=0 &&  width >=900 && <NavBarSpread style1={{ position:'relative', top: '0px'}} style2={{ aspectRatio:23, display:'block',}}/> }
             { scroller>150 &&  width >900  && <NavBarSpread  style1={{  position:'fixed', top:'0px'}}  style2={{  display:'none',}}/>
              }
-            { (scroller >=0 &&  width <900) &&  <NavBarShrink style1={{ position:'relative', top: '0px'}} style2={{ aspectRatio:4,  display:'block',}}/>}
+            { (scroller >=0 &&  width <900) &&  <NavBarShrink style1={{ position:'relative', top: '0px'}} style2={{ aspectRatio:8,  display:'block',}}/>}
             { (scroller>150 &&  width <900) && <NavBarShrink  style1={{ position:'fixed', top: '0px'}} style2={{  display:'none',}}/> }
             
             
