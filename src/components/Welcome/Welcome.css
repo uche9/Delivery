@@ -1,7 +1,6 @@
 .welcome--container{
     position: '';
     width:100%;
-    aspect-ratio: 1.45;
     display:flex;
     align-items:center;
     padding-left: 0px;
@@ -9,13 +8,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 
 .background--image--1{
        z-index:-1;
        width:100%;
-       aspect-ratio: 1.45;
        filter:brightness(70%);
        margin:0;
        position:absolute;

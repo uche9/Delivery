@@ -1,11 +1,30 @@
-//import SVGData from '../SVGData/SVGData'
+import SVGData from '../SVGData/SVGData'
 import './Welcome.css'
 import image1 from './image1.jpeg'
 import image2 from './image2.jpeg'
 import {useState,useEffect} from 'react'
 
 export default function Welcome(){
+
+
+         //Reading window size to resize container
+   const [width, setWidth]=useState(window.innerWidth || 1000)
    
+   
+   useEffect(()=>{
+  
+
+    const handleResize=()=>{
+        setWidth( window.innerWidth)
+    } 
+    
+    window.addEventListener('resize', handleResize);
+    return ()=>window.removeEventListener('resize', handleResize);
+    
+   },[width])
+
+   
+   //Generating TEXT through array of objects
     const welcome_data=[
             {
               upperText:'Welcome to Our company',
@@ -34,10 +53,10 @@ export default function Welcome(){
 
     return(
       <> 
-            <div className='welcome--container'>
+            <div className='welcome--container' style={{aspectRatio:`${width>900? 1.9 : 0.8}`}}>
             
                 
-                <img src={count===0? image1:image2} alt='pics' className='background--image--1'   /> 
+                <img src={count===0? image1:image2} alt='pics' style={{aspectRatio:`${width>900? 1.9 : 0.9}`}} className='background--image--1'   /> 
                                         
                 <div class='welcome--message'  >
                           <div>
@@ -47,8 +66,8 @@ export default function Welcome(){
                           </div>
                                 
                            <div  className='welcome--icons'>
-                              {/** 
-                               * <div className='umbrella--icon' id='welcome--icon'>
+
+                              <div className='umbrella--icon' id='welcome--icon'>
                                         {SVGData[7].code}
                                 </div>
                                 <div className='checklist--icon' id='welcome--icon'>
@@ -57,7 +76,7 @@ export default function Welcome(){
                               <div className='callsupport--icon' id='welcome--icon'>
                                       {SVGData[9].code}
                               </div>
-                              */}  
+                              
                       </div>
                 </div>
                 

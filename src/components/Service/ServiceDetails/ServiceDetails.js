@@ -1,3 +1,4 @@
+import {useState, useEffect} from 'react'
 import './ServiceDetails.css'
 import SVGData from '../../SVGData/SVGData'
 import { ServiceDetailsData } from './ServiceDetailsData.js'
@@ -6,14 +7,36 @@ import { ServiceDetailsData } from './ServiceDetailsData.js'
 
 
 export default function ServiceDetails({myId}){
+
+   //Reading window size to resize container
+   const [width, setWidth]=useState(window.innerWidth || 1000)
+   
+   
+   useEffect(()=>{
+  
+
+    const handleResize=()=>{
+        setWidth( window.innerWidth)
+    } 
+    
+    window.addEventListener('resize', handleResize);
+    return ()=>window.removeEventListener('resize', handleResize);
+    
+   },[width])
+
+
     return(
         <div className='conatainer--service--details'>
-            <div className='super--container'>
-                  <img src={ServiceDetailsData[myId].bImage_1} alt='back-pics' className="background-image-1" /> 
-                        <div className="container--welcome--service"> 
+            <div className='super--container' >
+                  
+                        <div className="container--welcome--service"   style={{aspectRatio:`${width>800 ? 1.9: 1}`}}> 
+                        <img src={ServiceDetailsData[myId].bImage_1}   style={{aspectRatio:`${width>800 ? 2.3: 1.2}`}} alt='back-pics' className="background-image-1" />
+                            <div className='message--container' >
                                 <p className='upper--text--service'>{ServiceDetailsData[myId].upperText}</p>
                                 <div className='underline--service' ></div>
                                 <p className='lower--text--service'>{ServiceDetailsData[myId].lowerText}</p>
+                            </div>
+                                
                         </div>
             </div>
             <div className='more--details--container'>
