@@ -262,9 +262,10 @@ export default function Receipt({data}){
                                                  DATE: <span className='data--details'>{data.date}</span>
                                            </div>
                                            <div style={{borderColor:'red', borderStyle:'solid', height:'auto'}}>
-                                                {`Local charges to be paid by by receiver.
+                                                 <b>Disclaimer :</b>{` Local charges to be paid by by receiver.
                                                 Dumurrage Charge applies after 3 days of failing to
-                                                pay local charges.`}
+                                                pay local charges. Losses or damages on items on transit shall not be borne by DME.
+                                                Client will take responsibility accordingly `}
                                            </div>
   
                                       </div>
