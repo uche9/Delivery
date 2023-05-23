@@ -1,4 +1,4 @@
-import SVGData from '../SVGData/SVGData'
+//import SVGData from '../SVGData/SVGData'
 import './Welcome.css'
 import image1 from './image1.jpeg'
 import image2 from './image2.jpeg'
@@ -47,7 +47,8 @@ export default function Welcome(){
                           </div>
                                 
                            <div  className='welcome--icons'>
-                                <div className='umbrella--icon' id='welcome--icon'>
+                              {/** 
+                               * <div className='umbrella--icon' id='welcome--icon'>
                                         {SVGData[7].code}
                                 </div>
                                 <div className='checklist--icon' id='welcome--icon'>
@@ -56,6 +57,7 @@ export default function Welcome(){
                               <div className='callsupport--icon' id='welcome--icon'>
                                       {SVGData[9].code}
                               </div>
+                              */}  
                       </div>
                 </div>
                 
