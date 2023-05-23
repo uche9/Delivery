@@ -23,7 +23,7 @@ export default function Receipt({data}){
                                             <img src={logo} alt='logo' style={{width:'200px'}}/>
                                     </div>
                                     <div style={{display:'flex', flexDirection:'column' , justifyContent:'space-evenly', fontWeight:'800'}}>
-                                            <div style={{fontSize:'30px', textAlign:'center'}}>DELIVERY MADE EASY</div>
+                                            <div style={{fontSize:'26px', textAlign:'center'}}>DELIVERY MADE EASY</div>
                                             <div style={{display : 'flex', justifyContent:'flex-end'}}> 
                                                   <div>AIR WAYBILL</div>
                                             </div>

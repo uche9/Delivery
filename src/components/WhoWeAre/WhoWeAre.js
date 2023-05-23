@@ -16,12 +16,13 @@ export default function WhoWeAre(){
             <div   
             style={{
                      fontWeight:'500', 
-                     fontSize:'25px', 
-                     paddingLeft:'0px',paddingRight:'0px' ,
+                     fontSize:'20px', 
+                     paddingLeft:'3px',paddingRight:'3px' ,
                      color:'#00f', 
                      display:'flex', width:'100%', justifyContent:'space-evenly',
                      marginBottom:'100px',
                      marginTop:'100px',
+                     textAlign:'center'
                      }} >
                    { who_we_are}
             </div>

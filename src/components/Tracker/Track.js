@@ -78,7 +78,7 @@ function handleChange(event){
               <div >
                  ... <span style={{fontSize:'20px'}}>{response}</span>                
                </div>
-               { search_permit && <div style={{fontSize:'20px', fontWeight:'600'}}>{feedback}</div>}
+               { search_permit && <div style={{fontSize:'17px', fontWeight:'600' , textAlign:'center'}}>{feedback}</div>}
                { search_permit && client_data.length===1 && <Receipt xx={2}  data={client_data[0]}  />}
                
          </div>
