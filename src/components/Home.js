@@ -1,4 +1,4 @@
-import GhostBar from './GhostBar/GhostBar.js'
+//import GhostBar from './GhostBar/GhostBar.js'
 import NavBar from './NavBar/NavBar.js'
 import Welcome from './Welcome/Welcome.js'
 import Strength from './Strength/Strength.js'
@@ -9,7 +9,7 @@ import Footer from './Footer/Footer.js'
 export default function Home(){
 return(
     <div  style={{display:'flex', flexDirection:'column'}}>
-          <GhostBar />
+          
           <NavBar />
           <Welcome />
           <Strength />

@@ -188,12 +188,11 @@ export default function NavBar(){
             {/*Nav Bar Conditional rendering */} 
             
             
-            { scroller >=0 && width >900 && <NavBarSpread/> }
-            { scroller>150 &&  width >900  
-             && <NavBarSpread active={{backgroundColor:'yellow'}} style1={{  position:'fixed', top:'0px'}} style2={{display:'none'}}/>
+            { scroller >=0 &&  width >=900 && <NavBarSpread style1={{ position:'relative', top: '0px'}}/> }
+            { scroller>150 &&  width >900  && <NavBarSpread  style1={{  position:'fixed', top:'0px'}} />
              }
-            { scroller >=0 && width <900 &&  <NavBarShrink />}
-            { scroller>150 &&  width <900 && <NavBarShrink  style1={{ position:'fixed', top: '0px'}} style2={{display:'none'}}/> }
+            { (scroller >=0 &&  width <900) &&  <NavBarShrink style1={{ position:'relative', top: '0px'}} />}
+            { (scroller>150 &&  width <900) && <NavBarShrink  style1={{ position:'fixed', top: '0px'}} /> }
             
             
         </div>
