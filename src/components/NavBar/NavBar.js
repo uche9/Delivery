@@ -74,7 +74,7 @@ export default function NavBar(){
     const  link_array=link_array_data.map(el=>{
             return( 
                 <>
-                         <div  id={el.way}  to={''} onClick={()=>setPath(el)}  className='link'>{el.place}</div>                
+                         <div  id={el.way}  onClick={()=>setPath(el)}  className='link'>{el.place}</div>                
                    
                 </>
                   
@@ -92,7 +92,7 @@ export default function NavBar(){
          
   
        
-    function NavBarSpread ({style1}){
+    function NavBarSpread ({style1, style2}){
        
        //set tab color for selected tab after page loads
     
@@ -111,14 +111,17 @@ export default function NavBar(){
                                         </div>
                                 </div>
                         </div>
-                       
-                    </div>
+                        <div  className='tab' style={style2}>
+                                  
+                        </div>         
+
+            </div>
            )
        }
 
      
 
-         function NavBarShrink ({style1}){
+         function NavBarShrink ({style1,style2}){
 
              
               
@@ -149,7 +152,7 @@ export default function NavBar(){
                                     <div className='link--search'>
                                          
                                          {drop? 
-                                            <div onClick={dropMenu} style={{ marginRight:'15px',width:'30px'}} >{SVGData[0].code}</div>
+                                            <div onClick={dropMenu} style={{ marginLeft:'100px',width:'50%'}} >{SVGData[0].code}</div>
                                               :
                                             <div  onClick={closeMenu} style={{marginRight:'15px', width:'30px'}}> {SVGData[1].code}</div>
                                          } 
@@ -165,8 +168,11 @@ export default function NavBar(){
                                             </div>                                
                                             
                                     </div>
-                                                         
+                                                    
                           </div>
+                          <div  className='tab' style={style2}>
+                                  
+                          </div>    
                     </div>
                  )
              }
@@ -188,11 +194,11 @@ export default function NavBar(){
             {/*Nav Bar Conditional rendering */} 
             
             
-            { scroller >=0 &&  width >=900 && <NavBarSpread style1={{ position:'relative', top: '0px'}}/> }
-            { scroller>150 &&  width >900  && <NavBarSpread  style1={{  position:'fixed', top:'0px'}} />
+            { scroller >=0 &&  width >=900 && <NavBarSpread style1={{ position:'relative', top: '0px'}} style2={{  display:'block',}}/> }
+            { scroller>150 &&  width >900  && <NavBarSpread  style1={{  position:'fixed', top:'0px'}}  style2={{  display:'none',}}/>
              }
-            { (scroller >=0 &&  width <900) &&  <NavBarShrink style1={{ position:'relative', top: '0px'}} />}
-            { (scroller>150 &&  width <900) && <NavBarShrink  style1={{ position:'fixed', top: '0px'}} /> }
+            { (scroller >=0 &&  width <900) &&  <NavBarShrink style1={{ position:'relative', top: '0px'}} style2={{  display:'block',}}/>}
+            { (scroller>150 &&  width <900) && <NavBarShrink  style1={{ position:'fixed', top: '0px'}} style2={{  display:'none',}}/> }
             
             
         </div>

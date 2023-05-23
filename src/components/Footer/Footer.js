@@ -1,7 +1,9 @@
 
-import {Link,Outlet} from 'react-router-dom'
+//import {Link,Outlet} from 'react-router-dom'
 import './Footer.css';
 import logo from './logo.jpeg'
+
+
 export default function Footer(){
 
 
@@ -13,31 +15,40 @@ export default function Footer(){
       const our_fleet_array=  our_fleet_array_data.map(el=>{
         return(
             <>
-               <Link  to={'/service/'+el.b} >
-                   <div className='footer--link' style={{margin:'20px', fontSize:'15px', color:'#fff'}}>
+               
+                   <div className='footer--link' onClick={()=>setServicePath(el)} style={{margin:'20px', fontSize:'15px', color:'#fff'}}>
                         {el.a}
                    </div> 
-               </Link>
-               <Outlet />
+           
             </>
         )
       }) 
+
+
+      function setServicePath (el){
+        window.location.pathname='/service/'+el.b
+      }
       
-      const our_link_array_data=[{a:'Home', b:'home'},{ a:'Contact Us', b:'contact'} ];
+
+
+      const our_link_array_data=[{c:'Home', d:'home'},{ c:'Contact Us', d:'contact'} ];
       const our_link_array=  our_link_array_data.map(el=>{
         return(
            <>
-               <Link  to={'/'+el.b} >
-                   <div className='footer--link' style={{margin:'20px', fontSize:'15px', color:'#fff'}}>
-                        {el.a}
+               
+                   <div className='footer--link' onClick={()=>setLinkPath(el)} style={{margin:'20px', fontSize:'15px', color:'#fff'}}>
+                        {el.c}
                    </div> 
-               </Link>
-               <Outlet />
+               
            </>
           
         )
       })  
 
+       
+      function setLinkPath (el){
+        window.location.pathname='/'+el.d
+      }
 
       function LinkDetails(props){
         return(

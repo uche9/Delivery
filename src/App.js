@@ -26,10 +26,10 @@ export default function App() {
                               <Route exact path='/track_shipment' element={<TrackShipment />} />
                               <Route exact path='/contact' element={<Contact />} />  
                               <Route exact path='/service/b2b_exchange' element={ <ServDetails id='0' />} />
-                              <Route exact path='/service/courier_delivery' element={ <ServDetails id='1' />} />
-                              <Route exact path='/service/logistics' element={ <ServDetails id='2' />} />
-                              <Route path='*' element={ <Home />} />
+                             <Route exact path='/service/courier_delivery' element={ <ServDetails id='1' />} />
+                              <Route exact path='/service/logistics' element={ <ServDetails id='2' />} /> 
                          
+                             {/**  <Route path='*' element={ <div>Error</div>} /> */}
                   </Routes>
             </BrowserRouter>
               

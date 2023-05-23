@@ -44,7 +44,7 @@ export default function ReachUs(){
     })
 
     return(
-        <div>
+        <div style={{backgroundColor:'#ccc'}}>
              
             <div   
             style={{
@@ -55,8 +55,8 @@ export default function ReachUs(){
                      display:'flex', width:'100%',justifyContent:'center', 
                      alignItems:'center',
                      flexWrap:'wrap',
-                     marginBottom:'100px',
-                     marginTop:'100px',
+                     marginBottom:'10px',
+                     marginTop:'10px',
                      }} >
                    { reach_us}
             </div>

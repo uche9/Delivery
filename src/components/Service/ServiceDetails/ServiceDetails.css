@@ -10,6 +10,7 @@
     align-self: center;
     width: 100%;
     aspect-ratio: 4;
+    
 }
 
 .container--welcome--service{
@@ -20,7 +21,7 @@
     align-self: center;
     width: 80%;
     aspect-ratio: 1.4;
-    background-color:red;
+
 }
 
 .background-image-1{

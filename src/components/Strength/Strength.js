@@ -2,7 +2,7 @@
 //import ScrollAnimate from '../FuncLibrary/ScrollAnimate.js'
 import {useState, useEffect} from 'react'
 import './Strength.css'
-import image3 from './image3.jpeg' 
+//import image3 from './image3.jpeg' 
 import image_1 from './image_1.jpeg' 
 import image_2 from './image_2.jpeg' 
 import image_3 from './image_3.jpeg' 
@@ -104,8 +104,10 @@ export default function Strength(){
 
     return(
         <div className='strength--container' >
-               
-             <img src={image3} alt='pics' className='background--image--strength'   />
+            {/** 
+             * <img src={image3} alt='pics' className='background--image--strength'   />
+             
+            */}   
              
              <p className='why--choose--us'>Why you should choose us?</p>
              <p style={{fontWeight:600, textAlign:'center', fontSize:'27px', marginTop:'20px', color:'rgb(255,50,50)'}}>OUR STRENGTHS AND OUR ADVANTAGES</p>
