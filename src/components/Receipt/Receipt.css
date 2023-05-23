@@ -5,7 +5,6 @@
 .receipt--container{
     margin-top: 100px;
     display:flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     width:95%;
@@ -37,22 +36,14 @@
 }
 
 .receipt--form{
-    display:flex;
-    width: 100%; 
-  
+  background-color: red;
 }
 
 .data--details{
     font-size:17px;
     font-weight:bold;
 }
-.part--A{
-    width:90%;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .heading{
     display:flex;
@@ -106,3 +97,87 @@
        background-color: rgb(27, 27, 26);
        width: 100%;
    }
+
+.shipment--status{
+    margin:20px;
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+}
+
+.status--message--container{
+    width: auto;
+    height:50px;
+    background-color:#aaa;
+    border :inset 2px solid ;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px green;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: '';
+    font-size:30px;
+    font-weight: 900;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   overflow: '';
+   animation: slide 20s infinite linear ;
+}
+
+@keyframes slide{
+    0%{
+        
+          transform: translateX(100vw);
+    }
+    
+    
+    100%{
+          transform: translateX(-25vw);
+           
+     }
+}
+
+
+.status--message--container--alt{
+    color: #f00;
+    width: auto;
+    height:50px;
+    background-color:#aaa;
+    border :inset 2px solid ;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px green;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: '';
+    font-size:35px;
+    font-weight: 900;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   overflow: '';
+   animation: expand 0.5s infinite  ;
+}
+
+@keyframes expand{
+    0%{
+        
+          transform: scale(0.7);
+          background-color: #aaa;
+    }
+    
+    
+    100%{
+          transform: scale(1);
+           background-color: aqua;
+     }
+}
+
+.super--message{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F66;
+  height: 100px;
+  width: 100%;
+  overflow:hidden;
+}
+
+ 

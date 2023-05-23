@@ -60,7 +60,9 @@
          totalBalance:'', 
        },
        routeNumber:'',
-       date:'3rd June',        
+       date:'3rd June', 
+       status:'yes'         /*If 'goods are on transit, put 'yes'...else put 'no' */ ,
+       statusMessage:'GOODS ON TRANSIT',       
     },
     {  
       Id:'2',
@@ -123,7 +125,9 @@
         totalBalance:'', 
       },
       routeNumber:'',
-      date:'',        
+      date:'', 
+      status:'no'         /*If 'goods are on transit, put 'yes'...else put 'no' */ ,
+      statusMessage:'GOODS ON HOLD!!!',        
    },
     
  ]

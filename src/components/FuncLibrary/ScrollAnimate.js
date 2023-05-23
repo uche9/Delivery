@@ -1,44 +1,40 @@
+/*
 import './ScrollAnimate.css'
 import {useState,useEffect} from 'react'
-/*
+
 *The role of this function is to animate an element by changing element class list
 *when scrolled into view
 */
 
-/*Bounding rectangle */
+/*Bounding rectangle 
 
 
-export default function ScrollAnimate({idName}){
+export default function ScrollAnimate(idName){
 
      
     
-    const [rect_1,setRect_1]=useState('')
+    const [rect_1,setRect_1]=useState(idName)
 
    
-   useEffect(()=>{
-    window.addEventListener('scroll',handleScroll);
+   useEffect((idName)=>{
+    window.addEventListener('scroll',handleScroll(idName));
 
-    return ()=> window.addEventListener('scroll',handleScroll);
+    function handleScroll(idName){
+        //let newRect=document.getElementById(idName).getBoundingClientRect()
+        // setRect_1(prevRect=>newRect);
+      }  
+
+    return ()=> window.addEventListener('scroll',handleScroll(idName));
    },)
 
-   function handleScroll(){
-    
-    setRect_1(prevRect=>document.getElementById(idName).getBoundingClientRect());
-    
-   }
-
-  
+   
+         
 
     return(                  
-                <>
-                   
-                    { /* Add or remove animation class*/ 
-                     rect_1.top>0 && rect_1.bottom<window.innerHeight ?
-                     document.getElementById(idName).classList.add('ani--strength--info'):
-                     document.getElementById(idName).classList.remove('ani--strength--info')
-                    }
-
-                </>
-                                     
+            
+                 {
+                    status : rect_1.top>0 && rect_1.bottom<window.innerHeight ? 'yes':'no' ,
+                    box: <div style={{width:'30px' , height:'30px', backgroundColor:'red', position:'fixed'}}></div>
+                 }                                
     )
-}
+} */

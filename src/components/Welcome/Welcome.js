@@ -35,19 +35,17 @@ export default function Welcome(){
       <> 
             <div className='welcome--container'>
             
-                <div className='left--arrow'>  </div>
-                        <img src={count===0? image1:image2} alt='pics' className='background--image--1'   /> 
+                
+                <img src={count===0? image1:image2} alt='pics' className='background--image--1'   /> 
                                         
                 <div class='welcome--message'  >
                       <p className='upper--text'>{welcome_data[count].upperText}</p>
                       <div className='underline' ></div>
                       <p className='lower--text'>{welcome_data[count].lowerText}</p>
                 </div>
-                <div className='right--arrow' style={{color:'red'}}>  </div>
+                
             </div>
-            {/*<div className={count===0?'heart':''}>
-                  
-             </div> */}
+            
       </>
     
   )

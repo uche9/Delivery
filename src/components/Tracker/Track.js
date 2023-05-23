@@ -76,9 +76,9 @@ function handleChange(event){
                       <input type='text' onChange={handleChange} placeholder='Enter Tracking Id' id='tracker' className='tracker'  value={entry}/>
               </div>
               <div >
-                Response : <span style={{fontSize:'25px'}}>{response}</span>                
+                 ... <span style={{fontSize:'20px'}}>{response}</span>                
                </div>
-               { search_permit && <div > {feedback}</div>}
+               { search_permit && <div style={{fontSize:'20px', fontWeight:'600'}}>{feedback}</div>}
                { search_permit && client_data.length===1 && <Receipt xx={2}  data={client_data[0]}  />}
                
          </div>

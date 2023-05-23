@@ -1,5 +1,5 @@
 
-import ScrollAnimate from '../FuncLibrary/ScrollAnimate.js'
+//import ScrollAnimate from '../FuncLibrary/ScrollAnimate.js'
 import {useState, useEffect} from 'react'
 import './Strength.css'
 import image3 from './image3.jpeg' 
@@ -54,9 +54,10 @@ export default function Strength(){
       /*Resizable window
       */
 
-       //Generate window width
-   const [width, setWidth]=useState(window.innerWidth)
-   const [cont_size, setContSize]=useState(window.innerWidth)
+       //Generate window width after resizing window
+
+   const [width, setWidth]=useState(window.innerWidth||1000)
+   const [cont_size, setContSize]=useState(window.innerWidth ||1000)
    
    useEffect(()=>{
 
@@ -80,21 +81,15 @@ export default function Strength(){
     
    },[width])
 
-    // Use width values to assign container size
-     
-  // var cont_size;
   
-    
-
-
 
     function KeyStrength(){
        const strength_info=strength_data.map( (el,index) =>{
          
                     return(
                               
-                                    <div id={'strength'+index} style={{opacity:0, marginBottom:'50px', paddingLeft:'10px', paddingTop:'20px',paddingRight:'10px', color:'#000', width:`${cont_size}%`, margin:'0px 2px', borderRadius:'5px', boxShadow:'5px 5px 3px yellow', border:'none'}}>
-                                                <ScrollAnimate idName={'strength'+index} index={index}/> 
+                                    <div id={'strength'+index}  style={{ marginBottom:'50px', paddingLeft:'10px', paddingTop:'20px',paddingRight:'10px', color:'#000', width:`${cont_size}%`, margin:'0px 2px', borderRadius:'5px', boxShadow:'5px 5px 3px yellow', border:'none'}}>
+                                                
                                                 <img style ={{ borderRadius:'5px' ,filter: 'brightness(100%)' ,width :'100%', aspectRatio:'1.9', marginBottom:'25x'}} alt='pics here'src={el.image} />
                                                 <p style={{padding:'20px', marginBottom:'1px', fontStyle:'italic',fontWeight:350, fontSize:'15px'}}>{el.text1}</p>
                                                 <p style={{padding:'20px', marginBottom:'1px', fontWeight:'600', fontSize:'25px' ,color:'red'}}>{el.text2}</p>

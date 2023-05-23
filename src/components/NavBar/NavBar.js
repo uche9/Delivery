@@ -1,9 +1,6 @@
-import {Link,Outlet} from 'react-router-dom'
+
 import './NavBar.css';
 import logo from "./logo.jpeg";
-//import search_icon from "../SVGData/search.png";
-//import menu_icon from "../SVGData/menu.png";
-//import close_icon from "../SVGData/close.png";
 import {useState, useEffect } from 'react'
 import SVGData from '../SVGData/SVGData.js'
 
@@ -11,12 +8,10 @@ import SVGData from '../SVGData/SVGData.js'
 
 export default function NavBar(){
    
-    //New way
-    const [active_way, setActiveWay]=useState((window.location.pathname).slice(1))
-
+    
     //Rendering Nav bar During scrolling
   
-   const [scroller, setScroller]=useState(document.body.scrollTop)
+   const [scroller, setScroller]=useState(0)
    
    useEffect(()=>{
     
@@ -33,16 +28,11 @@ export default function NavBar(){
    
 
    //Rendering Nav Bar During width resize
-   const [width, setWidth]=useState(window.innerWidth)
+   const [width, setWidth]=useState(window.innerWidth || 1000)
    
    
    useEffect(()=>{
-
-
-    //set tab color for selected tab after page loads
-    
-       
-    
+  
 
     const handleResize=()=>{
         setWidth( window.innerWidth)
@@ -52,6 +42,7 @@ export default function NavBar(){
     return ()=>window.removeEventListener('resize', handleResize);
     
    },[width])
+
 
   
 
@@ -83,11 +74,7 @@ export default function NavBar(){
     const  link_array=link_array_data.map(el=>{
             return( 
                 <>
-                      
-                     <Link  id={el.way}  to={'/'+el.way} onClick={()=>handlePath(el)} className='super--link'> 
-                         <div   className='link'>{el.place}</div>                
-                    </Link> 
-                    <Outlet />  
+                         <div  id={el.way}  to={''} onClick={()=>setPath(el)}  className='link'>{el.place}</div>                
                    
                 </>
                   
@@ -96,40 +83,19 @@ export default function NavBar(){
          })
 
                
-        /* Function to set URL  */
-         function handlePath(el){
+        /* Function to set path such that new page loads a freash*/
+        
+         function setPath(el){
             //Scroll to top of new page
-
-             var element=document.getElementById('nav--bar')
-             element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" })    
-
-             
-                    
-         }
+            window.location.pathname='/'+ el.way;
+        }
          
   
        
-    function NavBarSpread ({style1,style2,active}){
+    function NavBarSpread ({style1}){
        
-
-         //set tab color for selected tab after page loads
-         
-
-       useEffect(()=>{
-        setActiveWay( (window.location.pathname).slice(1))
-
-        setTimeout(()=>{
-             
-        
-        document.getElementById(active_way).style.backgroundColor='yellow'   
-        },0)
-
-    },[]) 
-            
-          
-             
-         
-         
+       //set tab color for selected tab after page loads
+    
       
       return (
                 <div id='nav--bar--spread' style={style1}   > 
@@ -145,30 +111,16 @@ export default function NavBar(){
                                         </div>
                                 </div>
                         </div>
-                       <div className='tab' style={style2}>
-                            
-                        </div> 
+                       
                     </div>
            )
        }
 
      
 
-         function NavBarShrink (props){
+         function NavBarShrink ({style1}){
 
-             //set tab color for selected tab after page loads
-             useEffect(()=>{
-                setActiveWay( (window.location.pathname).slice(1))
-        
-                setTimeout(()=>{
-                     
-                
-                document.getElementById(active_way).style.backgroundColor='yellow'   
-                },0)
-        
-            },[]) 
-            
-         
+             
               
                const[drop,setDrop]=useState(true)
 
@@ -179,16 +131,16 @@ export default function NavBar(){
                 setDrop(true)
                }
 
-            function LinkArray(props){
+            function LinkArray({style3}){
                 return (
-                <div className='link--search' style={props.style3}>
+                <div className='link--search' style={style3}>
                             <div className='links'>
                                 {link_array}
                             </div>
                </div>)
             }
             return (
-                      <div id='nav--bar--shrink' style={props.style1}>
+                      <div id='nav--bar--shrink' style={style1}>
                               <div className='nav--bar--container--shrink'>
                                    <div style={{display:'flex', justifyContent:'space-around',alignItems:'center', width:'100%' , paddingRight:'0px'}}>
                                       <img className='logo' src={logo} alt='logo heres' style={{marginLeft:'30px'}}/>
@@ -213,12 +165,7 @@ export default function NavBar(){
                                             </div>                                
                                             
                                     </div>
-                                  
-                                       
-                              
-                              <div className='tab' style={props.style2}>
-                                  
-                              </div>
+                                                         
                           </div>
                     </div>
                  )
@@ -233,7 +180,9 @@ export default function NavBar(){
            
          
     return(
-        < div id='nav--bar' style={{paddingLeft:'0px', paddingRight:'0px'}}> 
+        <>
+        
+            < div id='nav--bar' style={{paddingLeft:'0px', paddingRight:'0px'}}> 
             
             
             {/*Nav Bar Conditional rendering */} 
@@ -241,13 +190,15 @@ export default function NavBar(){
             
             { scroller >=0 && width >900 && <NavBarSpread/> }
             { scroller>150 &&  width >900  
-             &&<NavBarSpread active={{backgroundColor:'yellow'}} style1={{  position:'fixed', top:'0px'}} style2={{display:'none'}}/>
+             && <NavBarSpread active={{backgroundColor:'yellow'}} style1={{  position:'fixed', top:'0px'}} style2={{display:'none'}}/>
              }
             { scroller >=0 && width <900 &&  <NavBarShrink />}
             { scroller>150 &&  width <900 && <NavBarShrink  style1={{ position:'fixed', top: '0px'}} style2={{display:'none'}}/> }
             
             
         </div>
+        </>
+        
         
     )
 }

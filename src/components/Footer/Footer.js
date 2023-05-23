@@ -5,12 +5,21 @@ import logo from './logo.jpeg'
 export default function Footer(){
 
 
-      const our_fleet_array_data=['B2B Exchange', 'Delivery','Logistics','Shipping'];
+      const our_fleet_array_data=[
+         {a:'B2B Exchange', b:'b2b_exchange'},
+         {a:'Courier Delivery',b:'courier_delivery'} ,
+         {a:'Logistics', b:'logistics'}
+        ];
       const our_fleet_array=  our_fleet_array_data.map(el=>{
         return(
-            <div className='footer--link' style={{margin:'20px', fontSize:'15px'}}>
-                  {el}
-            </div> 
+            <>
+               <Link  to={'/service/'+el.b} >
+                   <div className='footer--link' style={{margin:'20px', fontSize:'15px', color:'#fff'}}>
+                        {el.a}
+                   </div> 
+               </Link>
+               <Outlet />
+            </>
         )
       }) 
       

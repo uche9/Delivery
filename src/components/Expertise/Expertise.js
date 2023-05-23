@@ -16,12 +16,12 @@ function ProgressBar(){
             level:'60%'
          },
          {
-            key:2,
+            key:3,
             expertise:'Margin',
             level:'75%'
          },
          {
-            key:2,
+            key:4,
             expertise:'Speed',
             level:'100%'
          }
@@ -119,8 +119,8 @@ function ProgressBar(){
                             
                             
                   </div>  
-                  <div style={{marginTop:'50px'}}>
-                         car separator Icon
+                  <div style={{marginTop:'50px' ,height:'3px', width:'80%', backgroundColor:'yellow'}}>
+                         
                   </div>      
                   <div  style={{display:'flex',width:'80%',paddingRight:'50px', paddingLeft:'50px', justifyContent:'center', alignItems:'center', marginTop:'80px' , flexWrap:'wrap'}}>
                        <Testimonial />

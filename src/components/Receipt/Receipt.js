@@ -12,29 +12,26 @@ export default function Receipt({data}){
         <div  className='receipt--container'>
              <img src={background_image} alt='b pics' style={{width:'100%', position:'absolute' , zIndex:'-1'}} />
       
-            <div className='receipt' style={{marginBottom:'20px'}}>RECEIPT</div>
-                 <div className='receipt--form'>
+            
+                 <div className='receipt--form' style={{width:'95%'}}>
+                         <div className='receipt' style={{marginBottom:'20px' ,textAlign:'center'}}>
+                            RECEIPT
+                         </div>
                          <div className='part--A' style={{borderColor:'red', borderStyle:'solid'}}>
                                 <div className='heading'>
                                     <div className='receipt--logo'>
                                             <img src={logo} alt='logo' style={{width:'200px'}}/>
                                     </div>
                                     <div style={{display:'flex', flexDirection:'column' , justifyContent:'space-evenly', fontWeight:'800'}}>
-                                            <div style={{fontSize:'45px', textAlign:'center'}}>DELIVERY MADE EASY</div>
+                                            <div style={{fontSize:'30px', textAlign:'center'}}>DELIVERY MADE EASY</div>
                                             <div style={{display : 'flex', justifyContent:'flex-end'}}> 
                                                   <div>AIR WAYBILL</div>
                                             </div>
                                     </div>
                                 </div>
-                                <div className='line' >
-                                </div>
-                                <div className='container--part--A' 
-                                     style={{display:'flex',
-                                            width:'100%', 
-                                            justifyContent:'space-around',
-                                            backgroundColor:'red'
-                                            }}>
-                                        <div className='part--A--left' style={{ backgroundColor:'' , width:'50%'}}>
+                                
+                                
+                                 <div className='part--A--left' style={{ backgroundColor:'green' , width:'100%'}}>
                                             <div className='sender'>
                                                 <div style={{ fontWeight:'bold',fontSize:'18px'}}>
                                                 {`1. FROM (SENDER)`} 
@@ -102,7 +99,7 @@ export default function Receipt({data}){
                                             </div>
                                         </div>
                                         
-                                        <div className='part--A--right' style={{ backgroundColor:'' , width:'48%'}}>
+                                        <div className='part--A--right' style={{ backgroundColor:'orange' , width:'100%'}}>
                                                <div className='airwaybill-code' style={{ backgroundColor:'#fff', width:'100%', height:'10%'}}>
                                                      <div>
                                                           Air Waybill Number
@@ -116,7 +113,7 @@ export default function Receipt({data}){
                                                     <div className='shipment--details' style={{width:'99.9%', height:'' , backgroundColor:'#fff', fontWeight:'bold', fontStyle:'italic'}}>
                                                         All payments and sevices are available in selected countries
                                                     </div>
-                                                    <div style={{ display:'flex', justifyContent:'center', margin:'2px', backgroundColor:'#fff', width:'99%', height:'100%'}}>
+                                                    <div style={{ display:'flex', justifyContent:'center', margin:'2px', backgroundColor:'#fff', width:'99%', height:'auto'}}>
                                                          <div style={{width:'55%', margin:'2px'}}>
                                                             <div style={{ display:'flex', flexDirection:'column', justifyContent:'space-between', backgroundColor:'yellow' , height:'100%'}}>
                                                                  <span><b>Services</b></span>
@@ -125,10 +122,11 @@ export default function Receipt({data}){
                                                                  <div>Domestic Package : <span className='data--details'>{data.shipmentDetails.services.domesticPackage}</span></div>
                                                                  <div>World Mail : <span className='data--details'>{data.shipmentDetails.services.worldMail}</span></div>
                                                                  <div>Other Service :<span className='data--details'>{data.shipmentDetails.services.otherService}</span> </div>
+                                                                 <br />
                                                             </div>
                                                         </div>
                                                         <div style={{width:'45%', margin:'2px'}}>
-                                                             <div style={{ backgroundColor:'yellow', height:'70%'}}>
+                                                             <div style={{ backgroundColor:'yellow', height:'auto'}}>
                                                                 <span><b>Sending Fee</b></span>
                                                                 <div>Receiver: <span className='data--details'>{data.shipmentDetails.sendingFee.receiver}</span></div>
                                                                 <div>Cash Or Check Or Credit Card: <span className='data--details'>{data.shipmentDetails.sendingFee.cashOrCheckOrCreditCard}</span> </div>
@@ -161,9 +159,9 @@ export default function Receipt({data}){
                                 </div>
                                 
                                 
-                        </div>
+                        
 
-                        <div className='part--B' style={{width:'40%', backgroundColor:'red'}}>
+                        <div className='part--B' style={{width:'100%', backgroundColor:'red'}}>
                                <div style={{display:'flex', width:'100%' , justifyContent:'center', height:'8%'}}>
                                       <div style={{backgroundColor:'#fff', width:'49%' , margin:'2px'}}>
                                            Origin : <span className='data--details'>{data.origin}</span>
@@ -263,7 +261,7 @@ export default function Receipt({data}){
                                            <div style={{borderColor:'red', borderStyle:'solid', height:'20%'}}>
                                                  DATE: <span className='data--details'>{data.date}</span>
                                            </div>
-                                           <div style={{borderColor:'red', borderStyle:'solid', height:'35%'}}>
+                                           <div style={{borderColor:'red', borderStyle:'solid', height:'auto'}}>
                                                 {`Local charges to be paid by by receiver.
                                                 Dumurrage Charge applies after 3 days of failing to
                                                 pay local charges.`}
@@ -272,11 +270,21 @@ export default function Receipt({data}){
                                       </div>
                                       
                                </div>
-                                
+                               <div className="shipment--status">
+                                     SHIPMENT STATUS
+                    
+                              </div>
+                              <div className='super--message'>
+                                       <div className={data.status==='yes'? 'status--message--container':'status--message--container--alt' }>
+                                           {data.statusMessage}   
+                                          </div>
+                              </div>  
                         </div>
-                 </div>
                         
-            
+                 </div>
+                <hr />    
+                
+                         
         </div>
     )
 }
