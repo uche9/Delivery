@@ -149,9 +149,9 @@ export default function NavBar(){
                                     <div className='link--search'>
                                          
                                          {drop? 
-                                            <div onClick={dropMenu} style={{width:'30px'}} >{SVGData[0].code}</div>
+                                            <div onClick={dropMenu} style={{ marginRight:'15px',width:'30px'}} >{SVGData[0].code}</div>
                                               :
-                                            <div  onClick={closeMenu} style={{width:'30px'}}> {SVGData[1].code}</div>
+                                            <div  onClick={closeMenu} style={{marginRight:'15px', width:'30px'}}> {SVGData[1].code}</div>
                                          } 
                                          
                                          
