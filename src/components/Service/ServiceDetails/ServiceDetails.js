@@ -29,8 +29,8 @@ export default function ServiceDetails({myId}){
         <div className='conatainer--service--details'>
             <div className='super--container' >
                   
-                        <div className="container--welcome--service"   style={{aspectRatio:`${width>800 ? 1.9: 1}`}}> 
-                        <img src={ServiceDetailsData[myId].bImage_1}   style={{aspectRatio:`${width>800 ? 2.3: 1.2}`}} alt='back-pics' className="background-image-1" />
+                        <div className="container--welcome--service"   style={{height:`${width>900? 600 : 500}px`}}> 
+                        <img src={ServiceDetailsData[myId].bImage_1}   style={{height:`${width>900? 600 : 500}px`}} alt='back-pics' className="background-image-1" />
                             <div className='message--container' >
                                 <p className='upper--text--service'>{ServiceDetailsData[myId].upperText}</p>
                                 <div className='underline--service' ></div>
