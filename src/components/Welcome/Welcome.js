@@ -1,7 +1,7 @@
 //import SVGData from '../SVGData/SVGData'
 import './Welcome.css'
-import image1 from './image1.jpeg'
-import image2 from './image2.jpeg'
+import image1 from './image1.png'
+import image2 from './image2.png'
 import {useState,useEffect} from 'react'
 
 export default function Welcome(){
@@ -53,7 +53,7 @@ export default function Welcome(){
 
     return(
       <> 
-            <div className='welcome--container' style={{aspectRatio:`${width>900? 1.9 : 0.9}`}}>
+            <div className='welcome--container' style={{aspectRatio:`${width>900? 1.9 : 0.8}`}}>
             
                 
                 <img src={count===0? image1:image2} alt='pics' style={{aspectRatio:`${width>900? 1.9 : 0.9}`}} className='background--image--1'   /> 

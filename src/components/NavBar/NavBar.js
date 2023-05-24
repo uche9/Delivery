@@ -194,7 +194,7 @@ export default function NavBar(){
             {/*Nav Bar Conditional rendering */} 
             
             
-            { scroller >=0 &&  width >=900 && <NavBarSpread style1={{ position:'relative', top: '0px'}} style2={{ aspectRatio:23, display:'block',}}/> }
+            { scroller >=0 &&  width >=900 && <NavBarSpread style1={{ position:'relative', top: '0px'}} style2={{ aspectRatio:24, display:'block',}}/> }
             { scroller>80 &&  width >900  && <NavBarSpread  style1={{  position:'fixed', top:'0px'}}  style2={{  display:'none',}}/>
              }
             { (scroller >=0 &&  width <900) &&  <NavBarShrink style1={{ position:'relative', top: '0px'}} style2={{ height:'80%',  display:'block',}}/>}
