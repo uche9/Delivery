@@ -1,4 +1,4 @@
-import SVGData from '../SVGData/SVGData'
+//import SVGData from '../SVGData/SVGData'
 import './Welcome.css'
 import image1 from './image1.jpeg'
 import image2 from './image2.jpeg'
@@ -53,31 +53,33 @@ export default function Welcome(){
 
     return(
       <> 
-            <div className='welcome--container' style={{aspectRatio:`${width>900? 1.9 : 0.8}`}}>
+            <div className='welcome--container' style={{aspectRatio:`${width>900? 1.9 : 0.9}`}}>
             
                 
-                <img src={count===0? image1:image2} alt='pics' style={{aspectRatio:`${width>900? 1.9 : 0.75}`}} className='background--image--1'   /> 
+                <img src={count===0? image1:image2} alt='pics' style={{aspectRatio:`${width>900? 1.9 : 0.9}`}} className='background--image--1'   /> 
                                         
                 <div class='welcome--message'  >
                           <div>
-                                <p className='upper--text'>{welcome_data[count].upperText}</p>
+                                <p className='upper--text'  >{welcome_data[count].upperText}</p>
                                 <div className='underline' ></div>
                                 <p className='lower--text'>{welcome_data[count].lowerText}</p>
                           </div>
                                 
-                           <div  className='welcome--icons'>
+                       {/**
+                        * <div  className='welcome--icons'>
 
-                              <div className='umbrella--icon' id='welcome--icon'>
-                                        {SVGData[7].code}
-                                </div>
-                                <div className='checklist--icon' id='welcome--icon'>
-                                        {SVGData[8].code}
-                                </div>
-                              <div className='callsupport--icon' id='welcome--icon'>
-                                      {SVGData[9].code}
-                              </div>
+                                        <div className='umbrella--icon' id='welcome--icon'>
+                                                        {SVGData[7].code}
+                                                </div>
+                                                <div className='checklist--icon' id='welcome--icon'>
+                                                        {SVGData[8].code}
+                                                </div>
+                                        <div className='callsupport--icon' id='welcome--icon'>
+                                                {SVGData[9].code}
+                                        </div>
                               
-                      </div>
+                                </div>
+                        */} 
                 </div>
                 
                 
