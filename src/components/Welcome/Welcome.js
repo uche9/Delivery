@@ -53,7 +53,7 @@ export default function Welcome(){
 
     return(
       <> 
-            <div className='welcome--container' style={{aspectRatio:`${width>900? 1.9 : 0.8}`}}>
+            <div className='welcome--container' style={{height:`${width>900? 600 : 400}px`}}>
             
                 
                 <img src={count===0? image1:image2} alt='pics' style={{aspectRatio:`${width>900? 1.9 : 0.9}`}} className='background--image--1'   /> 
