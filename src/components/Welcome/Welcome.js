@@ -53,10 +53,10 @@ export default function Welcome(){
 
     return(
       <> 
-            <div className='welcome--container' style={{height:`${width>900? 600 : 500}px`}}>
+            <div className='welcome--container' style={{height:`${width>900? 650 : 500}px`}}>
             
                 
-                <img src={count===0? image1:image2} alt='pics' style={{height:`${width>900? 600 : 500}px`}} className='background--image--1'   /> 
+                <img src={count===0? image1:image2} alt='pics' style={{height:`${width>900? 650 : 500}px`}} className='background--image--1'   /> 
                                         
                 <div class='welcome--message'  >
                           <div>

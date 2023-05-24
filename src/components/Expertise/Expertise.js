@@ -1,5 +1,6 @@
 import './Expertise.css';
-
+import ScrollAnimate from '../FuncLibrary/ScrollAnimate';
+import Counter from '../FuncLibrary/Counter';
 export default function Expertise(){
 
 function ProgressBar(){
@@ -8,36 +9,38 @@ function ProgressBar(){
         {
            key:1,
            expertise:'Experience',
-           level:'70%'
+           level:70
         },
         {
             key:2,
             expertise:'Skill',
-            level:'60%'
+            level:60
          },
          {
             key:3,
             expertise:'Margin',
-            level:'75%'
+            level:75
          },
          {
             key:4,
             expertise:'Speed',
-            level:'100%'
+            level:100
          }
 
 
     ]
-
-            const progress_bar=progress_data.map(el=>{
+          //ScrollAnimate('bars'+index)==='v' ? <Counter countInterval={1} limit={el.level}/> : 0
+          //el.level
+            const progress_bar=progress_data.map((el,index)=>{
                 
                 return(
-                    <div className='bars' style={{marginBottom:'20px', marginLeft:'0px'}}>
+                    <div className='bars' id={'bars'+index} style={{marginBottom:'20px', marginLeft:'0px'}}>
                                             <label for='bar1' style={{color:'#222', fontStyle:'italic', fontSize:'14px', fontFamily:'cursive'}}>{el.expertise}</label>
                                             <br />
                                             <div style={{width:'250px', height:'18px', backgroundColor:'#aaa',}}  >
-                                                <div style={{width:(el.level), height:'20px', backgroundColor:'#f00', display:'flex', justifyContent:'flex-end' , alignItems:'center'}} >
-                                                    <div style={{fontSize:'14px'}}>{el.level}</div>
+                                                <div style={{width:  `${el.level}%`, 
+                                                             height:'20px', backgroundColor:'#f00', display:'flex', justifyContent:'flex-end' , alignItems:'center'}} >
+                                                    <div style={{fontSize:'14px'}}>{  `${el.level} %`}</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -71,10 +74,10 @@ function ProgressBar(){
                 const testimonial=testimonial_data.map(el=>{
                 
                 return(
-                        <div  className='testimonials' style={{padding:'30px',width:'80%', display:'flex', flexDirection:'column', alignItems:'center' , justifyContent:'space-between'}}>            
+                        <div id="testimonials" className='testimonials' style={{padding:'30px',width:'80%', display:'flex', flexDirection:'column', alignItems:'center' , justifyContent:'space-between'}}>            
                                     
                                     <div style={{fontSize:'85px' , color:'#f22', fontWeight:'600'}}>
-                                            {el.number}
+                                    {  ScrollAnimate('testimonials')==='v' ? < Counter limit={el.number} countInterval={1} />: el.number} 
                                     </div>
                                     <div style={{fontSize:'27px', fontStyle:'italic' , color:'#111'}}>
                                             {el.case}

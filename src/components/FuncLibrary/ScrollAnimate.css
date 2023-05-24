@@ -3,18 +3,18 @@
 #box{
     border:solid black ;
     font-size: 30px;
-    background-color: yellow;
+    background-color: rgb(221, 221, 170);
     
 }
 
 .ani--strength--info{
- background-color: '';
- animation:slide 0.5s forwards;
+ 
+ animation:slid 0.5s forwards;
  
 }
 
 
-@keyframes slide {
+@keyframes slid {
     0% {
         transform:translateX(-100px) rotate(0deg) scale(0.2);
         opacity:0;

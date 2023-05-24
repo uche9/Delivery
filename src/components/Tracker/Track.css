@@ -1,7 +1,8 @@
 
 
 .tracker--container{
-    margin-top: 0px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,10 +11,10 @@
 }
 
 .portal{
+    margin-top: 20px;
     font-size: 50px;
-    color: yellowgreen;
     margin:50px;
-    font-weight: 400;
+    font-weight: 600;
     text-align: center;
 }
 
@@ -28,7 +29,19 @@
     margin:10px;
     font-style:italic;
     box-shadow: 3px 3px 3px red;
+    background-color: yellowgreen;
+    animation: blink 0.5s infinite
 }
+
+ @keyframes blink {
+    from {
+        border: 3px solid #f66;
+    
+    }
+    to{
+        border : 9px solid #0f2
+    }
+ }
 
 .tracker:focus{
     animation:spread_shrink  3s;
@@ -49,7 +62,7 @@
         width:100px;
     }
     to {
-        width:500px;
+        width:400px;
     }
 }
 
