@@ -1,7 +1,25 @@
+import {useState,useEffect} from 'react'
 import './ReachUs.css';
 import SVGData from '../SVGData/SVGData.js'
 
 export default function ReachUs(){
+
+
+        //Reading window size to resize container
+   const [width, setWidth]=useState(window.innerWidth || 1000)
+   
+   
+   useEffect(()=>{
+  
+
+    const handleResize=()=>{
+        setWidth( window.innerWidth)
+    } 
+    
+    window.addEventListener('resize', handleResize);
+    return ()=>window.removeEventListener('resize', handleResize);
+    
+   },[width])
 
     const reach_us_data=[
                          {  
@@ -24,7 +42,7 @@ export default function ReachUs(){
     const reach_us=reach_us_data.map(el=>{
         return(
 
-              <div style={{display:'flex', marginBottom:'30px' , width:'33%' , minWidth :'400px'}}>
+              <div style={{display:'flex', marginBottom:'30px', height:'100%' , minWidth :'300px' }}>
                        <div style={{margin: '5px',display: 'flex', justifyContent:'center', alignItems:'center' ,backgroundColor:'red', width:'50px' , aspectRatio:1, borderRadius:'50%'}}>
                        <div style={{margin: '5px',display: 'flex', justifyContent:'center', alignItems:'center' ,backgroundColor:'yellow', width:'50px' , aspectRatio:1, borderRadius:'50%'}}>
                           {el.icon}
@@ -44,19 +62,25 @@ export default function ReachUs(){
     })
 
     return(
-        <div style={{backgroundColor:'#ccc'}}>
+        <div style={{backgroundColor:'#abc',
+                   display:'flex',
+                   justifyContent:'center',
+                   alignItems:'center',
+                  width:'100%' , height:`${width>900? 550 : 550}px`,
+                  flexWrap:'wrap'
+                  }}>
              
             <div   
             style={{
+                     maerginTop:'200px',
                      fontWeight:'500', 
                      fontSize:'25px', 
-                     paddingLeft:'10%',paddingRight:'10%' ,
                      color:'#00f', 
-                     display:'flex', width:'100%',justifyContent:'center', 
-                     alignItems:'center',
-                     flexWrap:'wrap',
-                     marginBottom:'10px',
-                     marginTop:'10px',
+                     display:'flex', 
+                     width:'80%',
+                     justifyContent:'center', 
+                     alignItems:'center', 
+                     flexWrap:'wrap'
                      }} >
                    { reach_us}
             </div>
